@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="logo-circle.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -122,7 +123,7 @@
           <h2 data-i18n="hero-sub">Индивидуальные занятия и мини‑группы для спортсменов разных возрастов</h2>
         </div>
         <div class="hero-image">
-          <img src="hero.png" alt="Фигурист" data-img="hero">
+          <img src="hero.png" alt="Фигурист" data-img="hero" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -135,7 +136,7 @@
     <div class="container">
       <div class="trainer-grid">
         <div class="trainer-image">
-          <img src="trainer.png" alt="Третьяков Иван Павлович">
+          <img src="trainer.png" alt="Третьяков Иван Павлович" loading="lazy">
         </div>
         <div class="trainer-content">
           <div class="trainer-text">
@@ -215,7 +216,7 @@
     <div class="container">
       <div class="ofp-grid">
         <div class="ofp-image">
-          <img src="ofp.png" alt="ОФП" data-img="ofp">
+          <img src="ofp.png" alt="ОФП" data-img="ofp" loading="lazy">
         </div>
         <div class="ofp-content">
           <h2>ОФП</h2>
@@ -253,7 +254,7 @@
     <div class="container">
       <div class="online-grid">
         <div class="online-image">
-          <img src="online.png" alt="Online" data-img="online">
+          <img src="online.png" alt="Online" data-img="online" loading="lazy">
         </div>
         <div class="online-content">
           <h2>Online</h2>
@@ -327,6 +328,6 @@
     </div>
   </div>
 
-  <script src="js/script.js"></script>
+  <!-- Script moved to head with defer -->
 </body>
 </html>
