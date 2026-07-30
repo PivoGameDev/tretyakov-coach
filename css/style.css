@@ -552,11 +552,11 @@ ul {
 }
 
 body[data-mode="amateur"] .hero-image {
-  max-height: 55vh;
+  max-height: none;
 }
 
 body[data-mode="amateur"] .hero-image img {
-  max-height: 52vh;
+  max-height: 58vh;
   width: auto;
 }
 
