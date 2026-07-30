@@ -551,12 +551,8 @@ ul {
   max-height: calc(55vh + 60px);
 }
 
-body[data-mode="amateur"] .hero-image {
-  max-height: none;
-}
-
 body[data-mode="amateur"] .hero-image img {
-  max-height: 58vh;
+  max-height: calc(55vh + 60px);
   width: auto;
 }
 
