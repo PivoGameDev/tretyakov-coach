@@ -529,6 +529,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
       currentMode = this.dataset.mode;
+      document.body.dataset.mode = currentMode;
       applyContent();
     });
   });
