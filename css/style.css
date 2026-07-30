@@ -552,7 +552,7 @@ ul {
 }
 
 body[data-mode="amateur"] .hero-image img {
-  max-height: calc(55vh + 60px);
+  max-height: 75vh;
   width: auto;
 }
 
