@@ -76,9 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const menuText = {
     ru: { trainer: 'Тренер', skating: 'Лёд', ofp: 'ОФП', sfp: 'СФП', online: 'Online', contacts: 'Контакты', 'video-title': 'Видео прыжков', 'video-4s': '4S (четверной сальхов)', 'video-3lz': '3Lz (тройной лутц)' },
-    en: { trainer: 'Coach', skating: 'Ice', ofp: 'GFT', sfp: 'SFT', online: 'Online', contacts: 'Contacts', 'video-title': 'Jump Videos', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)' },
+    en: { trainer: 'Coach', skating: 'Ice', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'Contacts', 'video-title': 'Jump Videos', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)' },
     zh: { trainer: '教练', skating: '冰', ofp: '体能', sfp: '专项', online: '在线', contacts: '联系', 'video-title': '跳跃视频', 'video-4s': '4S (后内结环四周跳)', 'video-3lz': '3Lz (勾手三周跳)' },
-    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GFT', sfp: 'SFT', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)' }
+    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)' }
   };
 
   const content = {
@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'trainer-name': 'Tretyakov Ivan Pavlovich',
         'skate-title': 'Skating and Spins',
         'jump-title': 'Jump Elements',
-        'ofp-title': 'GFT',
-        'sfp-title': 'SFT',
+        'ofp-title': 'GPP',
+        'sfp-title': 'SPP',
         'online-title': 'Online',
         'contacts-title': 'Contact Me',
         'contacts-desc': 'Send me a message and I will contact you to discuss training.',
@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'trainer-name': 'Tretyakov Ivan Pavlovich',
         'skate-title': 'Skating and Spins',
         'jump-title': 'Jump Elements',
-        'ofp-title': 'GFT',
-        'sfp-title': 'SFT',
+        'ofp-title': 'GPP',
+        'sfp-title': 'SPP',
         'online-title': 'Online',
         'contacts-title': 'Contact Me',
         'contacts-desc': 'Send me a message and I will discuss training with you.',
@@ -357,8 +357,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'trainer-name': 'Tretyakov Ivan Pavlovich',
         'skate-title': 'การเล่นสเก็ตและการหมุน',
         'jump-title': 'การกระโดด',
-        'ofp-title': 'GFT',
-        'sfp-title': 'SFT',
+        'ofp-title': 'GPP',
+        'sfp-title': 'SPP',
         'online-title': 'Online',
         'contacts-title': 'ติดต่อฉัน',
         'contacts-desc': 'ส่งข้อความถึงฉัน แล้วฉันจะติดต่อคุณเพื่อหารือเกี่ยวกับการฝึกซ้อม',
@@ -401,8 +401,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'trainer-name': 'Tretyakov Ivan Pavlovich',
         'skate-title': 'การเล่นสเก็ตและการหมุน',
         'jump-title': 'การกระโดด',
-        'ofp-title': 'GFT',
-        'sfp-title': 'SFT',
+        'ofp-title': 'GPP',
+        'sfp-title': 'SPP',
         'online-title': 'Online',
         'contacts-title': 'ติดต่อฉัน',
         'contacts-desc': 'ส่งข้อความถึงฉัน แล้วฉันจะติดต่อคุณเพื่อหารือเกี่ยวกับการฝึกซ้อม',
