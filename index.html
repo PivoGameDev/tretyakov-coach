@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Третьяков Иван Павлович — Тренер по фигурному катанию</title>
+  <meta name="description" content="Индивидуальные занятия и мини-группы по фигурному катанию. Тренер с опытом более 15 лет.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo-circle.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+  <defs>
+    <clipPath id="clip-hero" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,1 Q 0.5,0.97 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-trainer-rev" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 Q 0.5,0.03 1,0 L 1,0.97 Q 0.5,1 0,0.97 Z"/>
+    </clipPath>
+    <clipPath id="clip-skating-rev" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.03 Q 0.5,0 1,0.03 L 1,0.96 C 0.87,0.965 0.78,0.995 0.55,0.995 C 0.32,0.995 0.13,0.965 0,0.95 Z"/>
+    </clipPath>
+    <clipPath id="clip-trainer" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 Q 0.5,0.03 1,0 L 1,1 Q 0.5,0.94 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-skating" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 Q 0.5,0.06 1,0 L 1,0.96 C 0.87,0.965 0.78,0.995 0.55,0.995 C 0.32,0.995 0.13,0.965 0,0.95 Z"/>
+    </clipPath>
+    <clipPath id="clip-ofp" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.05 C 0.13,0.035 0.32,0.005 0.55,0.005 C 0.78,0.005 0.87,0.035 1,0.04 L 1,1 Q 0.5,0.94 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-contacts" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.05 C 0.13,0.035 0.32,0.005 0.55,0.005 C 0.78,0.005 0.87,0.035 1,0.04 L 1,1 L 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-img-curve" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,0.97 Q 0.5,1 0,0.97 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-mob" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.03 Q 0.5,0 1,0.03 L 1,0.92 Q 0.5,0.98 0,0.9 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-mob-sk" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 Q 0.5,0.06 1,0 L 1,0.92 Q 0.5,0.98 0,0.9 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-mob-top" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.1 Q 0.5,0.02 1,0.08 L 1,1 Q 0.5,0.94 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-mob-ct" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.1 Q 0.5,0.02 1,0.08 L 1,1 L 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-top-only" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0.05 C 0.13,0.035 0.32,0.005 0.55,0.005 C 0.78,0.005 0.87,0.035 1,0.04 L 1,1 L 0,1 Z"/>
+    </clipPath>
+    <clipPath id="clip-wave-bot-only" clipPathUnits="objectBoundingBox">
+      <path d="M 0,0 L 1,0 L 1,0.96 C 0.87,0.965 0.78,0.995 0.55,0.995 C 0.32,0.995 0.13,0.965 0,0.95 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+  <!-- ============================== -->
+  <!-- HERO (header + hero together)  -->
+  <!-- ============================== -->
+  <section class="hero-section section section-bg-ice curve-hero" id="hero">
+
+    <!-- HEADER -->
+    <header class="hero-header">
+      <div class="container">
+        <div class="header-left">
+          <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-current" id="langCurrent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>RU</span>
+              <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
+            </button>
+            <div class="lang-list">
+              <a href="#" data-lang="ru" class="active">Русский</a>
+              <a href="#" data-lang="en">English</a>
+              <a href="#" data-lang="zh">中文</a>
+              <a href="#" data-lang="th">ไทย</a>
+            </div>
+          </div>
+          <div class="site-toggle">
+            <button class="toggle-btn active" data-mode="pro" data-i18n="toggle-pro">Спортсменам</button>
+            <button class="toggle-btn" data-mode="amateur" data-i18n="toggle-amateur">Любителям</button>
+          </div>
+        </div>
+        <div class="logo-wrapper">
+          <div class="logo-bg"></div>
+          <img src="logo-circle.png" alt="Логотип" class="logo-img">
+        </div>
+        <button class="header-btn" data-modal-open data-i18n="header-btn">Оставить заявку</button>
+      </div>
+    </header>
+
+    <!-- FULLSCREEN MENU -->
+    <div class="menu-overlay" id="menuOverlay">
+      <button class="menu-close" id="menuClose">&times;</button>
+      <nav class="menu-nav">
+        <a href="#trainer" class="menu-link" data-i18n="menu-trainer">Тренер</a>
+        <a href="#skating" class="menu-link" data-i18n="menu-skating">Лёд</a>
+        <a href="#ofp" class="menu-link" data-i18n="menu-ofp">ОФП</a>
+        <a href="#sfp" class="menu-link" data-i18n="menu-sfp">СФП</a>
+        <a href="#online" class="menu-link" data-i18n="menu-online">Online</a>
+        <a href="#contacts" class="menu-link" data-i18n="menu-contacts">Контакты</a>
+      </nav>
+    </div>
+
+    <!-- HERO MAIN CONTENT -->
+    <div class="hero-main">
+      <div class="container">
+        <div class="hero-text">
+          <h1 data-i18n="hero-title">Тренер по фигурному катанию</h1>
+          <div class="hero-stripe"></div>
+          <h2 data-i18n="hero-sub">Индивидуальные занятия и мини‑группы для спортсменов разных возрастов</h2>
+        </div>
+        <div class="hero-image">
+          <img src="hero.png" alt="Фигурист" data-img="hero">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- TRAINER SECTION                -->
+  <!-- ============================== -->
+  <section class="trainer-section section curve-trainer-rev" id="trainer">
+    <div class="container">
+      <div class="trainer-grid">
+        <div class="trainer-image">
+          <img src="trainer.png" alt="Третьяков Иван Павлович">
+        </div>
+        <div class="trainer-content">
+          <div class="trainer-text">
+            <h2>Третьяков Иван Павлович</h2>
+            <div class="trainer-stripe"></div>
+            <p data-i18n="trainer-text">Мастер спорта международного класса, неоднократный победитель Финала Кубка России, участник и призёр международных турниров ISU. В настоящее время тренер в спортивной школе, практик на коньках, специалист в технике элементов фигурного катания.</p>
+          </div>
+          <div class="trainer-divider"></div>
+          <ul class="trainer-list">
+            <li><span>Тренер с опытом работы более 15 лет</span></li>
+            <li><span>Отличие по специальности «Тренер-педагог»</span></li>
+            <li><span>Призёр международных соревнований ISU</span></li>
+            <li><span>Воспитанник ЦСКА под руководством Селицкой М.Л.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SKATING SECTION                -->
+  <!-- ============================== -->
+  <section class="skating-section section-bg-ice section curve-skating-rev" id="skating">
+    <div class="container">
+      <!-- Upper part: скольжение и вращения -->
+      <div class="skating-content">
+        <div class="skating-col">
+          <ul class="skating-list">
+            <li>Первые шаги на льду и сложные связки, использование которых повысит мастерство катания</li>
+            <li>Изучение сложно-координационных, а также базовых вращений для выполнения разрядов</li>
+          </ul>
+        </div>
+        <div class="skating-col">
+          <ul class="skating-list">
+            <li>Подготовка к выполнению юношеских и спортивных тестов</li>
+            <li>Исправление уже заученных ошибок в катании и исполнении элементов</li>
+          </ul>
+        </div>
+        <div class="skating-col">
+          <h2>Скольжение и вращения</h2>
+          <div class="skating-stripe skating-stripe--right"></div>
+        </div>
+      </div>
+
+      <div class="skating-divider"></div>
+
+      <!-- Lower part: прыжковые элементы -->
+      <div class="skating-content">
+        <div class="skating-col">
+          <h2>Прыжковые элементы</h2>
+          <div class="skating-stripe skating-stripe--left"></div>
+          <a href="#" class="video-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+            </svg>
+            <span data-i18n="video-link">Смотреть видео прыжков</span>
+          </a>
+        </div>
+        <div class="skating-col">
+          <ul class="skating-list">
+            <li>Подготовка и наработка необходимых умений для успешного владения прыжками</li>
+          </ul>
+        </div>
+        <div class="skating-col">
+          <ul class="skating-list">
+            <li>Освоение техники, позволяющей в дальнейшем исключить ошибки в многооборотных прыжках</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- OFP SECTION                    -->
+  <!-- ============================== -->
+  <section class="section section-bg-light curve-ofp-top" id="ofp">
+    <div class="container">
+      <div class="ofp-grid">
+        <div class="ofp-image">
+          <img src="ofp.png" alt="ОФП" data-img="ofp">
+        </div>
+        <div class="ofp-content">
+          <h2>ОФП</h2>
+          <div class="wide-stripe"></div>
+          <p>Индивидуальная программа по ОФП на подкачку определённых мышц и других характеристик спортсмена под каждую задачу и цель.</p>
+          <p>Групповые тренировки проходят в специализированном легкоатлетическом манеже.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SFP SECTION                    -->
+  <!-- ============================== -->
+  <section class="section section-bg-light curve-flat" id="sfp">
+    <div class="container">
+      <div class="sfp-grid">
+        <div class="sfp-content">
+          <h2>СФП</h2>
+          <div class="wide-stripe wide-stripe--center"></div>
+          <p>Индивидуальная программа по специальной физической подготовке на развитие взрывной силы, координации и устойчивости, необходимых для стабильного выполнения многооборотных прыжков и сложных вращений.</p>
+          <p>Работаем с различным спортивным инвентарём — от платформ до эспандеров.</p>
+        </div>
+        <div class="sfp-image">
+          <img src="sfp.png" alt="СФП" data-img="sfp">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- ONLINE SECTION                 -->
+  <!-- ============================== -->
+  <section class="section section-bg-light curve-online-bot" id="online">
+    <div class="container">
+      <div class="online-grid">
+        <div class="online-image">
+          <img src="online.png" alt="Online" data-img="online">
+        </div>
+        <div class="online-content">
+          <h2>Online</h2>
+          <div class="wide-stripe"></div>
+          <p>Индивидуальные онлайн-занятия с детальным разбором ваших видео, корректировкой техники и составлением домашних планов ОФП/СФП под ваши задачи.</p>
+          <p>Работаем в удобном формате с обратной связью по видео и текстовыми комментариями.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- CONTACTS SECTION               -->
+  <!-- ============================== -->
+  <section class="section section-bg-ice curve-contacts" id="contacts">
+    <div class="container">
+      <div class="contacts-single">
+        <h2>Связаться со мной</h2>
+        <div class="contacts-stripe"></div>
+        <p class="contacts-desc">Напишите мне сообщение, и я свяжусь с вами для обсуждения тренировок.</p>
+        <form id="contactsForm">
+          <textarea class="contacts-textarea" placeholder="Ваше сообщение..." aria-label="Сообщение"></textarea>
+          <button type="submit" class="contacts-btn contacts-btn--primary" data-i18n="contacts-submit">Отправить сообщение</button>
+          <label class="contacts-checkbox">
+            <input type="checkbox" required>
+            <span data-i18n="contacts-consent">Согласие на обработку <a href="privacy.html" target="_blank">персональных данных</a></span>
+          </label>
+        </form>
+        <div class="contacts-divider"></div>
+        <p class="contacts-callout" data-i18n="contacts-callout">Или оставьте заявку, и я свяжусь с вами сам</p>
+        <button class="contacts-btn contacts-btn--outline" data-modal-open data-i18n="contacts-btn">Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- MODAL                          -->
+  <!-- ============================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+      <h3 data-i18n="modal-title">Оставить заявку</h3>
+      <form class="modal-form" id="modalForm">
+        <input type="text" class="modal-input" id="modalName" placeholder="Имя" required data-i18n="modal-name">
+        <input type="tel" class="modal-input" id="modalPhone" placeholder="Телефон" required data-i18n="modal-phone">
+        <input type="email" class="modal-input" id="modalEmail" placeholder="Email" required data-i18n="modal-email">
+        <label class="checkbox-wrap">
+          <input type="checkbox" id="modalConsent" required>
+          <span data-i18n="modal-consent">Согласие на обработку <a href="privacy.html" target="_blank">персональных данных</a></span>
+        </label>
+        <button type="submit" class="modal-submit" data-i18n="modal-submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== VIDEO MODAL ========== -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal modal--video">
+      <button class="modal-close" id="videoClose">&times;</button>
+      <h3 data-i18n="video-title">Видео прыжков</h3>
+      <div class="video-grid">
+        <div class="video-item">
+          <video src="4s.mp4" controls preload="auto"></video>
+          <p data-i18n="video-4s">4S (четверной сальхов)</p>
+        </div>
+        <div class="video-item">
+          <video src="3lz.mp4" controls preload="auto"></video>
+          <p data-i18n="video-3lz">3Lz (тройной лутц)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
