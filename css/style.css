@@ -1393,7 +1393,19 @@ body[data-mode="amateur"] .hero-image img {
     break-inside: avoid;
   }
 
-  .trainer-list li::before {
+.trainer-list-arrow::before {
+  content: '↓';
+  color: var(--color-plus-red);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  display: inline-block;
+}
+
+.trainer-list li::before {
     content: '+';
     color: var(--color-plus-red);
     font-weight: 700;
