@@ -1189,6 +1189,16 @@ body[data-mode="amateur"] .hero-image img {
   clip-path: polygon(0% 3%, 20% 1.5%, 40% 0.5%, 50% 0%, 60% 0.5%, 80% 1.5%, 100% 3%, 100% 100%, 80% 98.5%, 60% 97.5%, 50% 97%, 40% 97.5%, 20% 98.5%, 0% 100%);
   position: relative;
   z-index: 1;
+  background: var(--color-light);
+}
+
+.curve-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 10px;
+  background: transparent;
+  pointer-events: none;
 }
 
 @media (max-width: 992px) {
