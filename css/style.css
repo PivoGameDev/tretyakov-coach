@@ -1182,6 +1182,27 @@ body[data-mode="amateur"] .hero-image img {
   font-weight: 600;
 }
 
+/* ========== CURVE STRIP ========== */
+.curve-strip {
+  height: 300px;
+  margin-top: calc(-1 * var(--curve-depth));
+  clip-path: path('M 0,3% Q 50%,0 100%,3% L 100%,100% Q 50%,97% 0,100% Z');
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .curve-strip {
+    height: 200px;
+  }
+}
+
+@media (max-width: 677px) {
+  .curve-strip {
+    height: 150px;
+  }
+}
+
 /* ========== CONTACTS+FOOTER WRAPPER ========== */
 .contacts-footer-wrap {
   background-size: cover;
