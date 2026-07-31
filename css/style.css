@@ -498,7 +498,10 @@ ul {
 
 @media (min-width: 993px) {
   .hero-text {
-    transform: translateY(30px);
+    transform: translateY(80px);
+  }
+  .hero-main {
+    padding-top: 50px;
   }
 }
 
