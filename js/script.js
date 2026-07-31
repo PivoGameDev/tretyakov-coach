@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function tgSend(text) {
     var url = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
-    fetch(url, { method: 'GET', mode: 'no-cors' }).catch(function(){});
+    window.location.href = url;
   }
 
   // ========== CONTACTS FORM ==========
