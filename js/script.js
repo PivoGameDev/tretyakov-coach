@@ -631,32 +631,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ========== DRAFT SAVING ==========
-  let draftTimer;
-  document.querySelectorAll('.contacts-textarea, #modalName, #modalPhone, #modalEmail').forEach(el => {
-    el.addEventListener('input', function () {
-      clearTimeout(draftTimer);
-      draftTimer = setTimeout(() => {
-        const draftText = document.querySelector('.contacts-textarea')?.value?.trim() || '';
-        const modalName = document.querySelector('#modalName')?.value?.trim() || '';
-        const modalPhone = document.querySelector('#modalPhone')?.value?.trim() || '';
-        const modalEmail = document.querySelector('#modalEmail')?.value?.trim() || '';
-        if (!draftText && !modalName && !modalPhone && !modalEmail) return;
-        let msg = '📝 Черновик\n';
-        if (modalName) msg += 'Имя: ' + modalName + '\n';
-        if (modalPhone) msg += 'Телефон: ' + modalPhone + '\n';
-        if (modalEmail) msg += 'Email: ' + modalEmail + '\n';
-        if (draftText) msg += 'Сообщение: ' + draftText;
-        var fd = new URLSearchParams();
-        fd.append('chat_id', TG_CHAT_ID);
-        fd.append('text', msg);
-        fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
-          method: 'POST', body: fd
-        }).catch(function(){});
-      }, 2000);
-    });
-  });
-
   // ========== CONTACTS FORM ==========
   document.getElementById('contactsForm').addEventListener('submit', function (e) {
     e.preventDefault();
