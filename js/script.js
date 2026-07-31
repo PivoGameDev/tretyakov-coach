@@ -615,8 +615,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
+  var tgFrame = document.createElement('iframe');
+  tgFrame.name = 'tgFrame';
+  tgFrame.style.display = 'none';
+  document.body.appendChild(tgFrame);
+
+  var tgForm = document.createElement('form');
+  tgForm.method = 'POST';
+  tgForm.action = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage';
+  tgForm.target = 'tgFrame';
+  tgForm.style.display = 'none';
+  var tgInput = document.createElement('input');
+  tgInput.name = 'chat_id';
+  tgInput.value = TG_CHAT_ID;
+  tgForm.appendChild(tgInput);
+  var tgText = document.createElement('input');
+  tgText.name = 'text';
+  tgForm.appendChild(tgText);
+  document.body.appendChild(tgForm);
+
   function tgSend(text) {
-    new Image().src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
+    tgText.value = text;
+    tgForm.submit();
   }
 
   // ========== CONTACTS FORM ==========
