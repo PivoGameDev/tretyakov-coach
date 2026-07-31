@@ -615,9 +615,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
+  var tgIframe = document.createElement('iframe');
+  tgIframe.name = 'tgSend';
+  tgIframe.style.display = 'none';
+  document.body.appendChild(tgIframe);
+
   function tgSend(text) {
     var url = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
-    window.open(url, '_blank');
+    tgIframe.src = url;
   }
 
   // ========== CONTACTS FORM ==========
