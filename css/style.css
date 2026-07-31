@@ -889,7 +889,7 @@ body[data-mode="amateur"] .hero-image img {
 
 @media (max-width: 992px) {
   #contacts.section {
-    padding-top: 30px;
+    padding-top: 0;
   }
 
   .contacts-checkbox {
