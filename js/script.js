@@ -618,6 +618,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function tgSend(text) {
     var img = new Image();
     img.src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
+    document.body.appendChild(img);
+    setTimeout(function(){ document.body.removeChild(img); }, 1000);
   }
 
   // ========== CONTACTS FORM ==========
