@@ -496,6 +496,12 @@ ul {
   margin-right: -100px;
 }
 
+@media (min-width: 993px) {
+  .hero-text {
+    transform: translateY(30px);
+  }
+}
+
 .hero-text h1 {
   font-family: 'Unbounded', var(--font-main);
   font-size: clamp(24px, 4.5vw, 58px);
