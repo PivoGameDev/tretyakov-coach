@@ -43,7 +43,7 @@ h1{font-size:28px;margin-bottom:24px;color:#D0336C}
   <h1>📋 Заявки с сайта</h1>
   <div class="toolbar">
     <button class="refresh" onclick="load()">🔄 Обновить</button>
-    <button class="logout" onclick="logout()">Выйти</button>
+    <button class="logout" onclick="showSettings()">⚙️ Настройки</button><button class="logout" onclick="logout()">Выйти</button>
   </div>
   <div id="app"><div class="loading">Загрузка заявок...</div></div>
 </div>
@@ -54,7 +54,7 @@ const chatId = '1163907662';
 
 function checkPass() {
   const pass = document.getElementById('passInput').value;
-  if (pass === 'admin123') {
+  var adminPass=localStorage.getItem("admin_pass")||"admin123";if(pass===adminPass) {
     document.getElementById('loginWrap').style.display = 'none';
     document.getElementById('adminPanel').style.display = 'block';
     document.cookie = 'admin_auth=1;path=/;max-age=' + (86400*7);
@@ -108,4 +108,16 @@ async function load() {
   }catch(e){app.innerHTML=`<div class="error">Ошибка загрузки: ${escapeHtml(e.message)}</div>`}
 }
 </script>
+
+<div class="modal" id="settingsModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:999">
+  <div style="background:#2a1d3a;padding:32px;border-radius:16px;max-width:400px;width:90%">
+    <h2 style="font-size:20px;margin-bottom:16px">⚙️ Настройки</h2>
+    <input type="password" class="login-input" id="oldPass" placeholder="Старый пароль">
+    <input type="password" class="login-input" id="newPass" placeholder="Новый пароль">
+    <input type="password" class="login-input" id="confirmPass" placeholder="Повторите пароль">
+    <div class="login-error" id="settingsError"></div>
+    <button class="login-btn" onclick="changePass()">Сохранить</button>
+    <button class="login-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.2);margin-top:8px" onclick="closeSettings()">Отмена</button>
+  </div>
+</div>
 </body></html>
