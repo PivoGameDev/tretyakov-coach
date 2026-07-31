@@ -1186,7 +1186,7 @@ body[data-mode="amateur"] .hero-image img {
 .curve-strip {
   height: 300px;
   margin-top: calc(-1 * var(--curve-depth));
-  clip-path: path('M 0,3% Q 50%,0 100%,3% L 100%,100% Q 50%,97% 0,100% Z');
+  clip-path: polygon(0% 3%, 20% 1.5%, 40% 0.5%, 50% 0%, 60% 0.5%, 80% 1.5%, 100% 3%, 100% 100%, 80% 98.5%, 60% 97.5%, 50% 97%, 40% 97.5%, 20% 98.5%, 0% 100%);
   position: relative;
   z-index: 1;
 }
