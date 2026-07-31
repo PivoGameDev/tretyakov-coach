@@ -798,6 +798,10 @@ body[data-mode="amateur"] .hero-image img {
   padding-top: 30px;
 }
 
+#online.section {
+  padding-bottom: 40px;
+}
+
 #sfp.section {
   padding-top: 0;
   padding-bottom: 0;
@@ -817,6 +821,7 @@ body[data-mode="amateur"] .hero-image img {
   }
   #online.section {
     padding-top: 0;
+    padding-bottom: 20px;
   }
 }
 
