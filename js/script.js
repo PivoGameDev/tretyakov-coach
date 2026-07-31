@@ -653,9 +653,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      submitForm({ name, phone, email, message: '' });
-      this.reset();
+      tgSend('Новая заявка с сайта\n\nИмя: ' + name + '\nТелефон: ' + phone + '\nEmail: ' + email);
       closeModal();
+      window.location.href = 'thanks.html';
     });
   }
 });
