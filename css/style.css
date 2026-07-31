@@ -669,7 +669,7 @@ body[data-mode="amateur"] .hero-image img {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 9px solid var(--color-plus-red);
+  border-top: 8px solid var(--color-plus-red);
   margin-top: 6px;
   flex-shrink: 0;
 }
