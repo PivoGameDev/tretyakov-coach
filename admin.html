@@ -43,7 +43,7 @@ h1{font-size:28px;margin-bottom:24px;color:#D0336C}
   <h1>📋 Заявки с сайта</h1>
   <div class="toolbar">
     <button class="refresh" onclick="load()">🔄 Обновить</button>
-    <button class="logout" onclick="showSettings()">⚙️ Настройки</button><button class="logout" onclick="logout()">Выйти</button>
+    <button class="refresh" onclick="showDrafts()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)">📝 Черновики</button><button class="logout" onclick="showSettings()">⚙️ Настройки</button><button class="logout" onclick="logout()">Выйти</button>
   </div>
   <div id="app"><div class="loading">Загрузка заявок...</div></div>
 </div>
@@ -92,6 +92,9 @@ function parseApp(text) {
   return {name,phone,email,message};
 }
 
+
+function showDrafts(){var a=document.getElementById('app');var d=JSON.parse(localStorage.getItem('formDrafts')||'{}');var keys=Object.keys(d);if(!keys.length){a.innerHTML='<div class="empty"><h2>Нет черновиков</h2><p>Пользователи пока ничего не вводили.</p></div><button class="refresh" onclick="load()" style="margin-top:16px">← Назад к заявкам</button>';return}
+var html='<div class="toolbar"><button class="refresh" onclick="load()">← Назад к заявкам</button></div><h2 style="margin-bottom:16px">📝 Черновики (неотправленные)</h2>';keys.forEach(function(k){html+='<div class="card"><div class="card-row"><span class="card-label">Поле</span><span class="card-value">'+k+'</span></div><div class="card-row"><span class="card-label">Значение</span><span class="card-value">'+d[k]+'</span></div></div>'});a.innerHTML=html}
 async function load() {
   const app=document.getElementById('app');app.innerHTML='<div class="loading">Загрузка заявок...</div>';
   try{

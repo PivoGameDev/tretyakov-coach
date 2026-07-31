@@ -629,6 +629,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ========== DRAFT SAVING ==========
+  document.querySelectorAll('.contacts-textarea, #modalName, #modalPhone, #modalEmail').forEach(el => {
+    el.addEventListener('input', function () {
+      const drafts = JSON.parse(localStorage.getItem('formDrafts') || '{}');
+      drafts[this.id || 'message'] = this.value;
+      localStorage.setItem('formDrafts', JSON.stringify(drafts));
+    });
+  });
+
   // ========== CONTACTS FORM ==========
   const contactsForm = document.getElementById('contactsForm');
 
