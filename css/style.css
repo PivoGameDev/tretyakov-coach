@@ -114,13 +114,10 @@ ul {
 
 @media (max-width: 992px) {
   .curve-skating-rev {
-    clip-path: none;
+    clip-path: polygon(0% 3%, 20% 1.5%, 40% 0.5%, 50% 0%, 60% 0.5%, 80% 1.5%, 100% 3%, 100% 100%, 0% 100%);
   }
   .curve-skating {
-    clip-path: none;
-  }
-  .curve-ofp-top {
-    clip-path: none;
+    clip-path: polygon(0% 0%, 20% 1.5%, 40% 3%, 50% 4%, 60% 3%, 80% 1.5%, 100% 0%, 100% 100%, 0% 100%);
   }
   .curve-contacts {
     clip-path: url(#clip-wave-mob-ct);
