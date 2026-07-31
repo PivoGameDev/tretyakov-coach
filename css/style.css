@@ -1355,7 +1355,7 @@ body[data-mode="amateur"] .hero-image img {
 
 /* ========== FOOTER ========== */
 .footer {
-  padding: 15px 0 5px;
+  padding: 15px 0 0;
   color: var(--color-light);
 }
 
