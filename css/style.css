@@ -663,7 +663,7 @@ body[data-mode="amateur"] .hero-image img {
 }
 
 .trainer-list-arrow::before {
-  content: '';
+  content: '' !important;
   display: inline-block;
   width: 0;
   height: 0;
@@ -1418,7 +1418,7 @@ body[data-mode="amateur"] .hero-image img {
   }
 
   .trainer-list-arrow::before {
-    content: '';
+    content: '' !important;
     display: block;
     width: 0;
     height: 0;
