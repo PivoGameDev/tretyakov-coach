@@ -616,10 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_CHAT_ID = '1163907662';
 
   function tgSend(text) {
-    var img = new Image();
-    img.src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
-    document.body.appendChild(img);
-    setTimeout(function(){ document.body.removeChild(img); }, 1000);
+    new Image().src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
   }
 
   // ========== CONTACTS FORM ==========
