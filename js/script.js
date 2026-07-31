@@ -616,9 +616,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_CHAT_ID = '1163907662';
 
   function sendToBot(data) {
-    var msg = 'Заявка с сайта\n\nИмя: ' + (data.name || '—') + '\nТелефон: ' + (data.phone || '—') + '\nEmail: ' + (data.email || '—') + (data.message ? '\nСообщение: ' + data.message : '');
-    var url = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(msg);
-    window.open(url, '_blank');
+    var msg = 'Заявка с сайта\nИмя: ' + (data.name || '—') + '\nТел: ' + (data.phone || '—') + '\nEmail: ' + (data.email || '—') + (data.message ? '\nСообщение: ' + data.message : '');
+    new Image().src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(msg);
   }
 
   // ========== CONTACTS FORM ==========
@@ -629,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!msg) { alert('Напишите сообщение.'); return; }
     if (!check.checked) { alert('Подтвердите согласие на обработку данных.'); return; }
     sendToBot({ message: msg });
-    window.location.href = 'thanks.html';
+    setTimeout(function(){ window.location.href = 'thanks.html'; }, 300);
   });
 
   // ========== MODAL FORM ==========
