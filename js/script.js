@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fd.append('phone', data.phone || '—');
     fd.append('email', data.email || '—');
     fd.append('message', data.message || '');
-    fetch(GS_URL, { method: 'POST', body: fd }).catch(function(){});
+    navigator.sendBeacon(GS_URL, fd);
   }
 
   // ========== CONTACTS FORM ==========
