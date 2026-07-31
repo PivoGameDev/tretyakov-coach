@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tretyakov-coach-backend
+    runtime: python
+    repo: https://github.com/PivoGameDev/tretyakov-coach
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SMTP_LOGIN
+        value: teamtrendycorner@yandex.ru
+      - key: SMTP_PASSWORD
+        value: hfmwskmfwcchcalv
+      - key: NOTIFY_EMAIL
+        value: teamtrendycorner@yandex.ru
