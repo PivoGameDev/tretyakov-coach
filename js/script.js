@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.add('active');
       langDropdown.querySelector('.lang-current span').textContent = lang.toUpperCase();
       langDropdown.classList.remove('open');
-      if (lang === 'en' || lang === 'ru' || lang === 'zh' || lang === 'th') {
+      if (lang === 'en' || lang === 'ru' || lang === 'zh' || lang === 'th' || lang === 'fr') {
         currentLang = lang;
         localStorage.setItem('coachLang', currentLang);
         applyContent();
