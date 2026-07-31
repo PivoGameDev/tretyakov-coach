@@ -612,14 +612,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ========== API CONFIG ==========
-  const API_URL = 'https://tretyakov-coach-backend.onrender.com/api';
+  const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
+  const TG_CHAT_ID = '1163907662';
 
   function submitForm(data) {
-    fetch(API_URL + '/send-request', {
+    const msg = `📩 Новая заявка с сайта\n\nИмя: ${data.name}\nТелефон: ${data.phone}\nEmail: ${data.email}${data.message ? '\nСообщение: ' + data.message : ''}`;
+    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(r => r.json()).then(res => {
+      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg })
+    }).then(() => {
       const thanks = { ru: 'thanks.html', en: 'thanks-en.html', zh: 'thanks-zh.html', th: 'thanks-th.html' };
       window.location.href = thanks[currentLang] || 'thanks.html';
     }).catch(() => {
