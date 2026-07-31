@@ -662,6 +662,18 @@ body[data-mode="amateur"] .hero-image img {
   margin-top: 2px;
 }
 
+.trainer-list-arrow::before {
+  content: '↓';
+  color: var(--color-plus-red);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  display: inline-block;
+}
+
 /* ========== SKATING SECTION ========== */
 .skating-section {
   color: var(--color-light);
@@ -1392,18 +1404,6 @@ body[data-mode="amateur"] .hero-image img {
     gap: 8px;
     break-inside: avoid;
   }
-
-.trainer-list-arrow::before {
-  content: '↓';
-  color: var(--color-plus-red);
-  font-weight: 900;
-  font-size: 22px;
-  line-height: 1;
-  flex-shrink: 0;
-  width: 14px;
-  text-align: center;
-  display: inline-block;
-}
 
 .trainer-list li::before {
     content: '+';
