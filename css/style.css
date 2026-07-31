@@ -667,9 +667,9 @@ body[data-mode="amateur"] .hero-image img {
   display: inline-block;
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 10px solid var(--color-plus-red);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--color-plus-red);
   margin-top: 6px;
   flex-shrink: 0;
 }
@@ -1422,9 +1422,9 @@ body[data-mode="amateur"] .hero-image img {
     display: block;
     width: 0;
     height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 8px solid var(--color-plus-red);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--color-plus-red);
     margin-top: 6px;
     flex-shrink: 0;
   }
