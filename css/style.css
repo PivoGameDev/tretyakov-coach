@@ -670,8 +670,9 @@ body[data-mode="amateur"] .hero-image img {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 9px solid var(--color-plus-red);
-  margin-top: 6px;
+  margin-top: 5px;
   flex-shrink: 0;
+  vertical-align: middle;
 }
 
 /* ========== SKATING SECTION ========== */
