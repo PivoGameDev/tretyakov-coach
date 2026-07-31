@@ -1,101 +1,111 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Админ-панель — Заявки</title>
-  <meta name="robots" content="noindex,nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', Arial, sans-serif; background: #1a1423; color: #E5E5E5; padding: 40px 20px; }
-    .container { max-width: 800px; margin: 0 auto; }
-    h1 { font-size: 28px; margin-bottom: 24px; color: #D0336C; }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .card-name { font-size: 18px; font-weight: 700; }
-    .card-date { font-size: 13px; opacity: 0.5; }
-    .card-row { display: flex; gap: 8px; margin-bottom: 6px; font-size: 14px; }
-    .card-label { opacity: 0.5; min-width: 80px; }
-    .card-value { opacity: 0.9; }
-    .empty { text-align: center; padding: 60px 20px; opacity: 0.5; }
-    .empty h2 { font-size: 20px; margin-bottom: 8px; }
-    .loading { text-align: center; padding: 60px; opacity: 0.6; }
-    .error { text-align: center; padding: 60px; color: #D0336C; }
-    .refresh { display: inline-block; padding: 10px 24px; background: #D0336C; color: #fff; border: none; border-radius: 25px; font-size: 14px; font-weight: 600; cursor: pointer; margin-bottom: 20px; transition: background .3s; }
-    .refresh:hover { background: #b82c5e; }
-    .stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-    .stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px 24px; flex: 1; min-width: 120px; text-align: center; }
-    .stat-num { font-size: 28px; font-weight: 700; color: #D0336C; }
-    .stat-label { font-size: 12px; opacity: 0.5; margin-top: 4px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>📋 Заявки с сайта</h1>
-    <div id="app"></div>
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Админ-панель</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Montserrat',Arial,sans-serif;background:#1a1423;color:#E5E5E5;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.login-wrap{max-width:380px;width:100%;padding:20px}
+.login-wrap h1{font-size:24px;margin-bottom:8px;color:#D0336C}
+.login-wrap p{font-size:14px;opacity:.5;margin-bottom:24px}
+.login-input{width:100%;padding:14px 16px;font-family:inherit;font-size:15px;border:none;border-radius:10px;background:rgba(255,255,255,.1);color:#E5E5E5;outline:none;margin-bottom:12px}
+.login-input:focus{background:rgba(255,255,255,.15)}
+.login-btn{width:100%;padding:14px;background:#D0336C;color:#fff;border:none;border-radius:25px;font-size:15px;font-weight:600;cursor:pointer;transition:background .3s}
+.login-btn:hover{background:#b82c5e}
+.login-error{color:#D0336C;font-size:13px;margin-top:10px;text-align:center;display:none}
+.container{max-width:800px;width:100%;padding:40px 20px;margin:0 auto;display:none}
+h1{font-size:28px;margin-bottom:24px;color:#D0336C}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin-bottom:16px}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.card-name{font-size:18px;font-weight:700}
+.card-date{font-size:13px;opacity:.5}
+.card-row{display:flex;gap:8px;margin-bottom:6px;font-size:14px}
+.card-label{opacity:.5;min-width:80px}
+.card-value{opacity:.9}
+.empty{text-align:center;padding:60px 20px;opacity:.5}
+.empty h2{font-size:20px;margin-bottom:8px}
+.loading{text-align:center;padding:60px;opacity:.6}
+.error{text-align:center;padding:60px;color:#D0336C}
+.refresh{display:inline-block;padding:10px 24px;background:#D0336C;color:#fff;border:none;border-radius:25px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:20px;transition:background .3s}
+.refresh:hover{background:#b82c5e}.logout{display:inline-block;padding:10px 24px;background:transparent;color:#E5E5E5;border:1px solid rgba(255,255,255,.2);border-radius:25px;font-size:14px;cursor:pointer;margin-left:10px;transition:background .3s}
+.logout:hover{background:rgba(255,255,255,.05)}
+.stats{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.05);border-radius:10px;padding:16px 24px;flex:1;min-width:120px;text-align:center}
+.stat-num{font-size:28px;font-weight:700;color:#D0336C}
+.stat-label{font-size:12px;opacity:.5;margin-top:4px}
+.toolbar{display:flex;align-items:center;margin-bottom:20px}
+</style></head><body>
+
+<div class="login-wrap" id="loginWrap">
+  <h1>🔐 Вход</h1>
+  <p>Введите пароль для доступа к панели</p>
+  <input type="password" class="login-input" id="passInput" placeholder="Пароль" onkeydown="if(event.key==='Enter')checkPass()">
+  <button class="login-btn" onclick="checkPass()">Войти</button>
+  <div class="login-error" id="loginError">Неверный пароль</div>
+</div>
+
+<div class="container" id="adminPanel">
+  <h1>📋 Заявки с сайта</h1>
+  <div class="toolbar">
+    <button class="refresh" onclick="load()">🔄 Обновить</button>
+    <button class="logout" onclick="logout()">Выйти</button>
   </div>
-  <script>
-    const tgToken = atob('ODg4MDMzNDAzNTpBQUhTZ0I4Z0NMTVM3OUJ3aEluOFpzU01RU0ZtWFpFTE1WWQ==');
-    const chatId = '1163907662';
+  <div id="app"><div class="loading">Загрузка заявок...</div></div>
+</div>
 
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
+<script>
+const tgToken = atob('ODg4MDMzNDAzNTpBQUhTZ0I4Z0NMTVM3OUJ3aEluOFpzU01RU0ZtWFpFTE1WWQ==');
+const chatId = '1163907662';
 
-    function parseApp(text) {
-      const lines = text.split('\n');
-      let name = '', phone = '', email = '', message = '';
-      lines.forEach(line => {
-        if (line.startsWith('Имя:')) name = line.replace('Имя:', '').trim();
-        if (line.startsWith('Телефон:')) phone = line.replace('Телефон:', '').trim();
-        if (line.startsWith('Email:')) email = line.replace('Email:', '').trim();
-        if (line.startsWith('Сообщение:')) message = line.replace('Сообщение:', '').trim();
-      });
-      return { name, phone, email, message };
-    }
-
-    function formatDate(ts) {
-      const d = new Date(ts * 1000);
-      return d.toLocaleString('ru-RU');
-    }
-
-    async function load() {
-      const app = document.getElementById('app');
-      app.innerHTML = '<div class="loading">Загрузка заявок...</div>';
-      try {
-        const res = await fetch(`https://api.telegram.org/bot${tgToken}/getUpdates`);
-        const data = await res.json();
-        if (!data.ok) throw new Error(data.description);
-        const apps = data.result.filter(u => u.message && u.message.chat && String(u.message.chat.id) === chatId && u.message.text && !u.message.text.startsWith('/'));
-        if (!apps.length) {
-          app.innerHTML = '<div class="empty"><h2>Пока нет заявок</h2><p>Когда кто-то оставит заявку, она появится здесь.</p></div>';
-          return;
-        }
-        let html = `<div class="stats"><div class="stat"><div class="stat-num">${apps.length}</div><div class="stat-label">Всего заявок</div></div></div>`;
-        html += `<button class="refresh" onclick="load()">🔄 Обновить</button>`;
-        apps.reverse().forEach(u => {
-          const p = parseApp(u.message.text);
-          html += `<div class="card">
-            <div class="card-header">
-              <div class="card-name">${escapeHtml(p.name || 'Без имени')}</div>
-              <div class="card-date">${formatDate(u.message.date)}</div>
-            </div>
-            <div class="card-row"><span class="card-label">Телефон</span><span class="card-value">${escapeHtml(p.phone)}</span></div>
-            <div class="card-row"><span class="card-label">Email</span><span class="card-value">${escapeHtml(p.email)}</span></div>
-            ${p.message && p.message !== '—' ? `<div class="card-row"><span class="card-label">Сообщение</span><span class="card-value">${escapeHtml(p.message)}</span></div>` : ''}
-          </div>`;
-        });
-        app.innerHTML = html;
-      } catch(e) {
-        app.innerHTML = `<div class="error">Ошибка загрузки: ${escapeHtml(e.message)}</div>`;
-      }
-    }
+function checkPass() {
+  const pass = document.getElementById('passInput').value;
+  if (pass === 'admin123') {
+    document.getElementById('loginWrap').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+    document.cookie = 'admin_auth=1;path=/;max-age=' + (86400*7);
     load();
-  </script>
-</body>
-</html>
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+
+function logout() {
+  document.cookie = 'admin_auth=;path=/;max-age=0';
+  document.getElementById('adminPanel').style.display = 'none';
+  document.getElementById('loginWrap').style.display = 'block';
+  document.getElementById('passInput').value = '';
+  document.getElementById('loginError').style.display = 'none';
+}
+
+if (document.cookie.split(';').some(c => c.trim().startsWith('admin_auth=1'))) {
+  document.getElementById('loginWrap').style.display = 'none';
+  document.getElementById('adminPanel').style.display = 'block';
+  load();
+}
+
+function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+function formatDate(ts){return new Date(ts*1000).toLocaleString('ru-RU')}
+
+function parseApp(text) {
+  const lines = text.split('\n'); let name='',phone='',email='',message='';
+  lines.forEach(l=>{
+    if(l.startsWith('Имя:')) name=l.replace('Имя:','').trim();
+    if(l.startsWith('Телефон:')) phone=l.replace('Телефон:','').trim();
+    if(l.startsWith('Email:')) email=l.replace('Email:','').trim();
+    if(l.startsWith('Сообщение:')) message=l.replace('Сообщение:','').trim();
+  });
+  return {name,phone,email,message};
+}
+
+async function load() {
+  const app=document.getElementById('app');app.innerHTML='<div class="loading">Загрузка заявок...</div>';
+  try{
+    const res=await fetch(`https://api.telegram.org/bot${tgToken}/getUpdates`);
+    const d=await res.json();if(!d.ok)throw new Error(d.description);
+    const apps=d.result.filter(u=>u.message&&u.message.chat&&String(u.message.chat.id)===chatId&&u.message.text&&!u.message.text.startsWith('/'));
+    if(!apps.length){app.innerHTML='<div class="empty"><h2>Пока нет заявок</h2><p>Когда кто-то оставит заявку, она появится здесь.</p></div>';return}
+    let html=`<div class="stats"><div class="stat"><div class="stat-num">${apps.length}</div><div class="stat-label">Всего заявок</div></div></div>`;
+    apps.reverse().forEach(u=>{
+      const p=parseApp(u.message.text);
+      html+=`<div class="card"><div class="card-header"><div class="card-name">${escapeHtml(p.name||'Без имени')}</div><div class="card-date">${formatDate(u.message.date)}</div></div><div class="card-row"><span class="card-label">Телефон</span><span class="card-value">${escapeHtml(p.phone)}</span></div><div class="card-row"><span class="card-label">Email</span><span class="card-value">${escapeHtml(p.email)}</span></div>${p.message&&p.message!=='—'?`<div class="card-row"><span class="card-label">Сообщение</span><span class="card-value">${escapeHtml(p.message)}</span></div>`:''}</div>`
+    });
+    app.innerHTML=html;
+  }catch(e){app.innerHTML=`<div class="error">Ошибка загрузки: ${escapeHtml(e.message)}</div>`}
+}
+</script>
+</body></html>
