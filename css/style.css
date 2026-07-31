@@ -1182,6 +1182,13 @@ body[data-mode="amateur"] .hero-image img {
   font-weight: 600;
 }
 
+/* ========== CONTACTS+FOOTER WRAPPER ========== */
+.contacts-footer-wrap {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ========== FOOTER ========== */
 .footer {
   padding: 60px 0 30px;
