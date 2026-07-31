@@ -1201,7 +1201,7 @@ body[data-mode="amateur"] .hero-image img {
   position: relative;
   z-index: 1;
   background: var(--color-light);
-  padding: 25px 0 50px;
+  padding: 12px 0 40px;
 }
 
 .curve-strip::before {
@@ -1220,6 +1220,7 @@ body[data-mode="amateur"] .hero-image img {
   gap: 30px;
   max-width: 900px;
   margin: 0 auto;
+  padding-top: 4px;
 }
 
 .strip-medals .medal-icon {
