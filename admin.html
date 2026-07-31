@@ -88,7 +88,7 @@ body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;
     <h1>🚀 <span>Tretyakov</span> Coach · Центр управления</h1>
     <div class="header-actions">
       <button class="header-btn primary" onclick="load()">🔄 Обновить</button>
-      <button class="header-btn outline" onclick="showSettings()">⚙️</button>
+      
       <button class="header-btn secondary" onclick="logout()">Выйти</button>
     </div>
   </div>
@@ -108,7 +108,7 @@ body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;
   </div>
 </div>
 
-<div class="modal-overlay" id="settingsModal">
+<div style="display:none">
   <div class="modal">
     <h2>⚙️ Настройки</h2>
     <input type="password" class="login-input" id="oldPass" placeholder="Старый пароль">
@@ -128,13 +128,14 @@ var currentTab = 'requests';
 function checkPass(){var p=document.getElementById('passInput').value;var ap=localStorage.getItem('admin_pass')||'admin123';if(p===ap){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';document.cookie='admin_auth=1;path=/;max-age='+(86400*7);load()}else{document.getElementById('loginError').style.display='block'}}
 function logout(){document.cookie='admin_auth=;path=/;max-age=0';document.getElementById('dashboardWrap').style.display='none';document.getElementById('loginWrap').style.display='block';document.getElementById('passInput').value='';document.getElementById('loginError').style.display='none'}
 if(document.cookie.split(';').some(function(c){return c.trim().startsWith('admin_auth=1')})){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';load()}
-function showSettings(){document.getElementById('settingsModal').classList.add('active')}
-function closeSettings(){document.getElementById('settingsModal').classList.remove('active');document.getElementById('settingsError').style.display='none'}
-function changePass(){var o=document.getElementById('oldPass').value,n=document.getElementById('newPass').value,c=document.getElementById('confirmPass').value;var p=localStorage.getItem('admin_pass')||'admin123';if(o!==p){document.getElementById('settingsError').textContent='Старый пароль неверный';document.getElementById('settingsError').style.display='block';return}if(n.length<4){document.getElementById('settingsError').textContent='Минимум 4 символа';document.getElementById('settingsError').style.display='block';return}if(n!==c){document.getElementById('settingsError').textContent='Пароли не совпадают';document.getElementById('settingsError').style.display='block';return}localStorage.setItem('admin_pass',n);closeSettings();alert('Пароль изменён!')}
 function switchTab(tab,btn){currentTab=tab;document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');load()}
 function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
 function formatDate(ts){return new Date(ts*1000).toLocaleString('ru-RU')}
 function parseApp(text){var lines=text.split('\n');var r={name:'',phone:'',email:'',message:''};lines.forEach(function(l){if(l.startsWith('Имя:'))r.name=l.replace('Имя:','').trim();if(l.startsWith('Телефон:'))r.phone=l.replace('Телефон:','').trim();if(l.startsWith('Email:'))r.email=l.replace('Email:','').trim();if(l.startsWith('Сообщение:'))r.message=l.replace('Сообщение:','').trim()});return r}
+
+function showDrafts(){var app=document.getElementById('app');app.innerHTML='<div class="loading">Загрузка черновиков...</div>';fetch('https://api.telegram.org/bot'+tgToken+'/getUpdates').then(function(r){return r.json()}).then(function(d){if(!d.ok)throw new Error(d.description);var msgs=d.result.filter(function(u){return u.message&&u.message.text&&u.message.text.startsWith('📝')});if(!msgs.length){app.innerHTML='<div class="empty"><h2>Нет черновиков</h2></div>';return}
+var html='';msgs.reverse().forEach(function(u){var t=u.message.text.replace('📝 Черновик
+','');html+='<div class="card"><div class="card-header"><div class="card-date">'+formatDate(u.message.date)+'</div></div><div class="card-row" style="white-space:pre-wrap;font-size:13px">'+escapeHtml(t)+'</div></div>'});app.innerHTML=html}).catch(function(e){app.innerHTML='<div class="error">'+escapeHtml(e.message)+'</div>'})}
 function showDrafts(){var d=JSON.parse(localStorage.getItem('formDrafts')||'{}');var keys=Object.keys(d);var app=document.getElementById('app');document.getElementById('statDrafts').textContent=keys.length;if(!keys.length){app.innerHTML='<div class=\"empty\"><h2>Нет черновиков</h2><p>Данные не сохранялись.</p></div>';return}
 var html='';keys.forEach(function(k){html+='<div class=\"draft-item\"><span class=\"draft-field\">'+k+'</span><span class=\"draft-value\">'+escapeHtml(d[k])+'</span></div>'});app.innerHTML=html}
 

@@ -630,11 +630,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ========== DRAFT SAVING ==========
+  let draftTimer;
   document.querySelectorAll('.contacts-textarea, #modalName, #modalPhone, #modalEmail').forEach(el => {
     el.addEventListener('input', function () {
-      const drafts = JSON.parse(localStorage.getItem('formDrafts') || '{}');
-      drafts[this.id || 'message'] = this.value;
-      localStorage.setItem('formDrafts', JSON.stringify(drafts));
+      clearTimeout(draftTimer);
+      draftTimer = setTimeout(() => {
+        const draftText = document.querySelector('.contacts-textarea')?.value?.trim() || '';
+        const modalName = document.querySelector('#modalName')?.value?.trim() || '';
+        const modalPhone = document.querySelector('#modalPhone')?.value?.trim() || '';
+        const modalEmail = document.querySelector('#modalEmail')?.value?.trim() || '';
+        if (!draftText && !modalName && !modalPhone && !modalEmail) return;
+        let msg = '📝 Черновик\n';
+        if (modalName) msg += 'Имя: ' + modalName + '\n';
+        if (modalPhone) msg += 'Телефон: ' + modalPhone + '\n';
+        if (modalEmail) msg += 'Email: ' + modalEmail + '\n';
+        if (draftText) msg += 'Сообщение: ' + draftText;
+        fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg })
+        }).catch(() => {});
+      }, 2000);
     });
   });
 
