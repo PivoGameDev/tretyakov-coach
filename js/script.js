@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.add('active');
       langDropdown.querySelector('.lang-current span').textContent = lang.toUpperCase();
       langDropdown.classList.remove('open');
-      if (lang === 'en' || lang === 'ru' || lang === 'zh' || lang === 'th') {
+      if (lang === 'en' || lang === 'ru' || lang === 'zh' || lang === 'th' || lang === 'fr') {
         currentLang = lang;
         localStorage.setItem('coachLang', currentLang);
         applyContent();
@@ -78,8 +78,85 @@ document.addEventListener('DOMContentLoaded', function () {
     ru: { trainer: 'Тренер', skating: 'Лёд', ofp: 'ОФП', sfp: 'СФП', online: 'Online', contacts: 'Контакты', 'video-title': 'Видео прыжков', 'video-4s': '4S (четверной сальхов)', 'video-3lz': '3Lz (тройной лутц)', 'career-title': 'Результаты карьеры', 'footer-copy': '© 2026 Тренер по фигурному катанию', 'medal-1': 'Первенство г. Москвы «Олимпийские надежды» — 2005', 'medal-2': 'Финал Кубка России — 2009, Тверь', 'medal-3': 'Nebelhorn Trophy — 2009, Оберстдорф (Германия)', 'medal-4': 'NRW Trophy — 2010, Дортмунд (Германия)', 'medal-5': 'ISU JGP Tallinn Cup — 2005, Таллин (Эстония)', 'medal-6': 'NRW Trophy — 2007, Дортмунд (Германия)' },
     en: { trainer: 'Coach', skating: 'Ice', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'Contacts', 'video-title': 'Jump Videos', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)', 'career-title': 'Career Results', 'footer-copy': '© 2026 Figure Skating Coach', 'medal-1': 'Moscow City Championship «Olympic Hopes» — 2005', 'medal-2': 'Russian Cup Final — 2009, Tver', 'medal-3': 'Nebelhorn Trophy — 2009, Oberstdorf (Germany)', 'medal-4': 'NRW Trophy — 2010, Dortmund (Germany)', 'medal-5': 'ISU JGP Tallinn Cup — 2005, Tallinn (Estonia)', 'medal-6': 'NRW Trophy — 2007, Dortmund (Germany)' },
     zh: { trainer: '教练', skating: '冰', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: '联系', 'video-title': '跳跃视频', 'video-4s': '4S (后内结环四周跳)', 'video-3lz': '3Lz (勾手三周跳)', 'career-title': '职业生涯成绩', 'footer-copy': '© 2026 花样滑冰教练', 'medal-1': '莫斯科市锦标赛 «奥林匹克希望» — 2005', 'medal-2': '俄罗斯杯决赛 — 2009, 特维尔', 'medal-3': 'Nebelhorn Trophy — 2009, 奥伯斯多夫 (德国)', 'medal-4': 'NRW Trophy — 2010, 多特蒙德 (德国)', 'medal-5': 'ISU JGP 塔林杯 — 2005, 塔林 (爱沙尼亚)', 'medal-6': 'NRW Trophy — 2007, 多特蒙德 (德国)' },
-    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)', 'career-title': 'ผลงานอาชีพ', 'footer-copy': '© 2026 โค้ชสเก็ตลีลา', 'medal-1': 'Moscow City Championship «Olympic Hopes» — 2005', 'medal-2': 'Russian Cup Final — 2009, ตเวียร์', 'medal-3': 'Nebelhorn Trophy — 2009, โอเบอร์สตอร์ฟ (เยอรมนี)', 'medal-4': 'NRW Trophy — 2010, ดอร์ทมุนด์ (เยอรมนี)', 'medal-5': 'ISU JGP Tallinn Cup — 2005, ทัลลินน์ (เอสโตเนีย)', 'medal-6': 'NRW Trophy — 2007, ดอร์ทมุนด์ (เยอรมนี)' }
-  };
+    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)', 'career-title': 'ผลงานอาชีพ', 'footer-copy': '© 2026 โค้ชสเก็ตลีลา', 'medal-1': 'Moscow City Championship «Olympic Hopes» — 2005', 'medal-2': 'Russian Cup Final — 2009, ตเวียร์', 'medal-3': 'Nebelhorn Trophy — 2009, โอเบอร์สตอร์ฟ (เยอรมนี)', 'medal-4': 'NRW Trophy — 2010, ดอร์ทมุนด์ (เยอรมนี)', 'medal-5': 'ISU JGP Tallinn Cup — 2005, ทัลลินน์ (เอสโตเนีย)', 'medal-6': 'NRW Trophy — 2007, ดอร์ทมุนด์ (เยอรมนี)' },
+    fr: { trainer: 'Entraîneur', skating: 'Glace', ofp: 'GPP', sfp: 'SPP', online: 'En ligne', contacts: 'Contact', 'video-title': 'Vidéos de sauts', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)', 'career-title': 'Résultats de carrière', 'footer-copy': '© 2026 Entraîneur de patinage artistique', 'medal-1': 'Moscow City Championship «Olympic Hopes» — 2005', 'medal-2': 'Russian Cup Final — 2009, Tver', 'medal-3': 'Nebelhorn Trophy — 2009, Oberstdorf (Allemagne)', 'medal-4': 'NRW Trophy — 2010, Dortmund (Allemagne)', 'medal-5': 'ISU JGP Tallinn Cup — 2005, Tallinn (Estonie)', 'medal-6': 'NRW Trophy — 2007, Dortmund (Allemagne)' }
+    fr: {
+      pro: {
+        'trainer-name': 'Tretyakov Ivan Pavlovich',
+        'skate-title': 'Patinage et Pirouettes',
+        'jump-title': 'Sauts',
+        'ofp-title': 'GPP', 'sfp-title': 'SPP',
+        'online-title': 'En ligne',
+        'contacts-title': 'Me contacter',
+        'contacts-desc': 'Envoyez-moi un message et je vous contacterai pour discuter de votre entraînement.',
+        'toggle-pro': 'Sportifs', 'toggle-amateur': 'Amateurs',
+        'header-btn': 'Laisser une demande',
+        'contacts-submit': 'Envoyer', 'contacts-consent': 'Consentement au traitement des données personnelles',
+        'contacts-callout': 'Ou laissez une demande et je vous contacterai',
+        'contacts-btn': 'Laisser une demande',
+        'modal-title': 'Laisser une demande', 'modal-name': 'Nom', 'modal-phone': 'Téléphone', 'modal-email': 'Email',
+        'modal-consent': 'Consentement au traitement des données personnelles',
+        'modal-submit': 'Envoyer la demande', 'video-link': 'Voir les vidéos de sauts',
+        'hero-title': 'Entraîneur de patinage artistique',
+        'hero-sub': 'Cours particuliers et mini-groupes pour sportifs de tous âges',
+        'trainer-text': 'Maître des Sports de Classe Internationale, multiple vainqueur de la Finale de la Coupe de Russie, participant et médaillé des compétitions internationales ISU. Actuellement entraîneur dans une école de sport, patineur praticien, spécialiste de la technique des éléments de patinage artistique.',
+        'list-1': "Plus de 15 ans d'expérience en tant qu'entraîneur",
+        'list-2': 'Diplôme spécialisé « Entraîneur-pédagogue »',
+        'list-3': 'Médaillé des compétitions internationales ISU',
+        'list-4': "Élève de l'École CSKA sous la direction de Selitskaya M.L.",
+        'skate-1': 'Premiers pas sur glace et enchaînements complexes pour améliorer la maîtrise du patinage',
+        'skate-2': "Apprentissage des pirouettes de base et à haute coordination pour l'obtention des rangs",
+        'skate-3': 'Préparation aux tests sportifs et juniors',
+        'skate-4': 'Correction des erreurs déjà apprises dans le patinage et lexécution des éléments',
+        'jump-1': 'Préparation et développement des compétences nécessaires à la maîtrise des sauts',
+        'jump-2': "Apprentissage de la technique permettant d'éviter les erreurs dans les sauts multi-révolutions",
+        'ofp-1': "Programme individuel de préparation physique générale pour renforcer des groupes musculaires spécifiques selon les objectifs de l'athlète.",
+        'ofp-2': 'Les séances de groupe ont lieu dans un manège spécialisé.',
+        'sfp-1': "Programme individuel de préparation physique spéciale pour développer la force explosive, la coordination et la stabilité nécessaires à l'exécution stable des sauts multi-révolutions et des pirouettes complexes.",
+        'sfp-2': "Nous travaillons avec divers équipements sportifs — des plateformes aux élastiques.",
+        'online-1': "Cours en ligne individuels avec analyse détaillée de vos vidéos, correction de la technique et plans de préparation à domicile.",
+        'online-2': 'Format pratique avec retour vidéo et commentaires textuels.',
+        img: { hero: 'hero.png', ofp: 'ofp.png', sfp: 'sfp.png', online: 'online.png' }
+      },
+      amateur: {
+        'trainer-name': 'Tretyakov Ivan Pavlovich',
+        'skate-title': 'Patinage et Pirouettes',
+        'jump-title': 'Sauts',
+        'ofp-title': 'GPP', 'sfp-title': 'SPP',
+        'online-title': 'En ligne',
+        'contacts-title': 'Me contacter',
+        'contacts-desc': 'Envoyez-moi un message et je discuterai de votre entraînement avec vous.',
+        'toggle-pro': 'Sportifs', 'toggle-amateur': 'Amateurs',
+        'header-btn': 'Laisser une demande',
+        'contacts-submit': 'Envoyer', 'contacts-consent': 'Consentement au traitement des données personnelles',
+        'contacts-callout': 'Ou laissez une demande et je vous contacterai',
+        'contacts-btn': 'Laisser une demande',
+        'modal-title': 'Laisser une demande', 'modal-name': 'Nom', 'modal-phone': 'Téléphone', 'modal-email': 'Email',
+        'modal-consent': 'Consentement au traitement des données personnelles',
+        'modal-submit': 'Envoyer la demande', 'video-link': 'Voir les vidéos de sauts',
+        'hero-title': 'Entraîneur de patinage artistique',
+        'hero-sub': 'Cours particuliers pour amateurs de tout âge et niveau',
+        'trainer-text': "Maître des Sports de Classe Internationale, vainqueur de la Finale de la Coupe de Russie, participant et médaillé des compétitions ISU. Un entraîneur expérimenté qui aidera adultes et enfants à faire leurs premiers pas sur la glace et à patiner avec confiance.",
+        'list-1': "Plus de 15 ans d'expérience",
+        'list-2': 'Diplôme spécialisé « Entraîneur-pédagogue »',
+        'list-3': 'Médaillé des compétitions ISU',
+        'list-4': "Élève de l'École CSKA",
+        'skate-1': 'Mise en place dune technique de patinage correcte pour adultes et enfants débutants',
+        'skate-2': 'Apprentissage des pirouettes, des virages et des pas de base et avancés',
+        'skate-3': "Patinage confiant sur glace, développement de la coordination et de la sensation de la glace",
+        'skate-4': 'Correction des erreurs techniques courantes pour un patinage confortable et élégant',
+        'jump-1': 'Préparation aux sauts par des exercices préparatoires spécialisés',
+        'jump-2': "Apprentissage des sauts de base en fonction de votre niveau et de votre condition physique",
+        'ofp-1': "Programme individuel de préparation physique générale pour renforcer les muscles et améliorer la souplesse et l'endurance.",
+        'ofp-2': 'Séances en format confortable adaptées à votre niveau de forme actuel.',
+        'sfp-1': "Préparation physique spéciale pour améliorer la coordination, l'équilibre et la grâce nécessaires à un beau patinage.",
+        'sfp-2': 'Nous utilisons divers équipements pour des entraînements variés et efficaces.',
+        'online-1': 'Consultations en ligne individuelles avec analyse vidéo, conseils techniques et programme dentraînement à domicile.',
+        'online-2': 'Retour vidéo et recommandations textuelles à votre convenance.',
+        img: { hero: 'hero-2.png', ofp: 'ofp-2.png', sfp: 'sfp-2.png', online: 'online-2.png' }
+      }
+    },
+  };  };
 
   const content = {
     ru: {
@@ -477,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = data[key];
       } else if (key === 'contacts-consent' || key === 'modal-consent') {
-        const ct = currentLang === 'ru' ? 'персональных данных' : currentLang === 'zh' ? '个人数据' : currentLang === 'th' ? 'ข้อมูลส่วนบุคคล' : 'personal data';
+        var ct = currentLang === 'ru' ? 'персональных данных' : currentLang === 'zh' ? '个人数据' : currentLang === 'th' ? 'ข้อมูลส่วนบุคคล' : currentLang === 'fr' ? 'données personnelles' : 'personal data';
         el.innerHTML = data[key] + ' <a href="privacy.html" target="_blank">' + ct + '</a>';
       } else {
         el.textContent = data[key];
@@ -486,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('[data-i18n="contacts-consent"],[data-i18n="modal-consent"]').forEach(el => {
       const links = el.querySelectorAll('a');
-      const pMap = { en: 'privacy-en.html', zh: 'privacy-zh.html', th: 'privacy-th.html' };
+      const pMap = { en: 'privacy-en.html', zh: 'privacy-zh.html', th: 'privacy-th.html', fr: 'privacy-fr.html' };
       links.forEach(a => { a.href = pMap[currentLang] || 'privacy.html'; });
     });
 
