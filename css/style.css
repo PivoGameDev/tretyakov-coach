@@ -1197,7 +1197,7 @@ body[data-mode="amateur"] .hero-image img {
 /* ========== CURVE STRIP ========== */
 .curve-strip {
   margin-top: calc(-1 * var(--curve-depth));
-  clip-path: polygon(0% 3%, 20% 1.5%, 40% 0.5%, 50% 0%, 60% 0.5%, 80% 1.5%, 100% 3%, 100% 100%, 80% 98.5%, 60% 97.5%, 50% 97%, 40% 97.5%, 20% 98.5%, 0% 100%);
+  clip-path: polygon(0% 3%, 10% 2.4%, 20% 1.8%, 30% 1.2%, 40% 0.7%, 50% 0%, 60% 0.7%, 70% 1.2%, 80% 1.8%, 90% 2.4%, 100% 3%, 100% 100%, 90% 98.4%, 80% 97.2%, 70% 96.2%, 60% 95.6%, 50% 95%, 40% 95.6%, 30% 96.2%, 20% 97.2%, 10% 98.4%, 0% 100%);
   position: relative;
   z-index: 1;
   background: var(--color-light);
@@ -1210,7 +1210,7 @@ body[data-mode="amateur"] .hero-image img {
   top: 0; left: 0; right: 0;
   height: 20px;
   background: url('../bg-ice.jpg') center / cover no-repeat;
-  clip-path: polygon(0% 50%, 20% 25%, 40% 8%, 50% 0%, 60% 8%, 80% 25%, 100% 50%, 100% 100%, 80% 75%, 60% 58%, 50% 50%, 40% 58%, 20% 75%, 0% 100%);
+  clip-path: polygon(0% 50%, 10% 40%, 20% 30%, 30% 20%, 40% 12%, 50% 0%, 60% 12%, 70% 20%, 80% 30%, 90% 40%, 100% 50%, 100% 100%, 90% 97%, 80% 91%, 70% 87%, 60% 84%, 50% 83%, 40% 84%, 30% 87%, 20% 91%, 10% 97%, 0% 100%);
   pointer-events: none;
 }
 
@@ -1220,7 +1220,15 @@ body[data-mode="amateur"] .hero-image img {
   gap: 30px;
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 4px;
+  padding-top: 2px;
+}
+
+.strip-medals .medal-col:first-child {
+  margin-top: 8px;
+}
+
+.strip-medals .medal-col:last-child {
+  margin-top: 8px;
 }
 
 .strip-medals .medal-icon {
