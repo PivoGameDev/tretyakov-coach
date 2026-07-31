@@ -664,15 +664,23 @@ body[data-mode="amateur"] .hero-image img {
 
 .trainer-list-arrow::before {
   content: '' !important;
-  display: inline-block;
+  display: inline-flex;
+  align-items: flex-end;
+  width: 12px;
+  height: 9px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.trainer-list-arrow::after {
+  content: '';
+  display: block;
   width: 0;
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 9px solid var(--color-plus-red);
-  margin-top: 5px;
-  flex-shrink: 0;
-  vertical-align: middle;
 }
 
 /* ========== SKATING SECTION ========== */
