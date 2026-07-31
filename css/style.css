@@ -1277,6 +1277,10 @@ body[data-mode="amateur"] .hero-image img {
     gap: 0;
   }
 
+  .strip-medals {
+    min-height: 220px;
+  }
+
   .medal-slide {
     display: none;
   }
