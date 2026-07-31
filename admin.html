@@ -1,126 +1,150 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Админ-панель</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Montserrat',Arial,sans-serif;background:#1a1423;color:#E5E5E5;min-height:100vh;display:flex;align-items:center;justify-content:center}
-.login-wrap{max-width:380px;width:100%;padding:20px}
-.login-wrap h1{font-size:24px;margin-bottom:8px;color:#D0336C}
-.login-wrap p{font-size:14px;opacity:.5;margin-bottom:24px}
-.login-input{width:100%;padding:14px 16px;font-family:inherit;font-size:15px;border:none;border-radius:10px;background:rgba(255,255,255,.1);color:#E5E5E5;outline:none;margin-bottom:12px}
-.login-input:focus{background:rgba(255,255,255,.15)}
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Центр управления — Tretyakov Coach</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+
+/* Login */
+.login-wrap{max-width:380px;width:100%;padding:20px;margin:40px auto}
+.login-wrap h1{font-family:'Unbounded',sans-serif;font-size:24px;margin-bottom:4px;color:#D0336C}
+.login-wrap p{font-size:14px;color:#888;margin-bottom:24px}
+.login-input{width:100%;padding:14px 16px;font-family:inherit;font-size:15px;border:2px solid #e0e0e0;border-radius:10px;background:#fff;color:#1a1a2e;outline:none;margin-bottom:12px;transition:border-color .3s}
+.login-input:focus{border-color:#D0336C}
 .login-btn{width:100%;padding:14px;background:#D0336C;color:#fff;border:none;border-radius:25px;font-size:15px;font-weight:600;cursor:pointer;transition:background .3s}
 .login-btn:hover{background:#b82c5e}
+.login-btn+.login-btn{margin-top:8px;background:transparent;border:2px solid #ddd;color:#666}
+.login-btn+.login-btn:hover{background:#f5f5f5}
 .login-error{color:#D0336C;font-size:13px;margin-top:10px;text-align:center;display:none}
-.container{max-width:800px;width:100%;padding:40px 20px;margin:0 auto;display:none}
-h1{font-size:28px;margin-bottom:24px;color:#D0336C}
-.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin-bottom:16px}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.card-name{font-size:18px;font-weight:700}
-.card-date{font-size:13px;opacity:.5}
-.card-row{display:flex;gap:8px;margin-bottom:6px;font-size:14px}
-.card-label{opacity:.5;min-width:80px}
-.card-value{opacity:.9}
-.empty{text-align:center;padding:60px 20px;opacity:.5}
-.empty h2{font-size:20px;margin-bottom:8px}
-.loading{text-align:center;padding:60px;opacity:.6}
+
+/* Dashboard */
+.header{background:#fff;border-bottom:1px solid #e8e8e8;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.header h1{font-family:'Unbounded',sans-serif;font-size:18px;color:#1a1a2e;letter-spacing:1px}
+.header h1 span{color:#D0336C}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap}
+.header-btn{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;border:none;font-family:inherit}
+.header-btn.primary{background:#D0336C;color:#fff}
+.header-btn.primary:hover{background:#b82c5e}
+.header-btn.secondary{background:#f0f2f5;color:#555}
+.header-btn.secondary:hover{background:#e0e0e0}
+.header-btn.outline{background:transparent;border:1.5px solid #ddd;color:#666}
+.header-btn.outline:hover{background:#f5f5f5}
+
+.dashboard{padding:24px;max-width:1200px;margin:0 auto}
+
+/* Stats Grid */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.stat-card{background:#fff;border-radius:14px;padding:20px;border:1px solid #e8e8e8;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#D0336C;opacity:.5}
+.stat-card .stat-icon{font-size:24px;margin-bottom:8px}
+.stat-card .stat-value{font-size:28px;font-weight:700;color:#1a1a2e;font-family:'Unbounded',sans-serif}
+.stat-card .stat-label{font-size:12px;color:#999;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+.stat-card .stat-trend{font-size:11px;margin-top:6px;color:#4CAF50}
+
+/* Content Tabs */
+.tabs{display:flex;gap:4px;margin-bottom:20px;background:#fff;border-radius:12px;padding:4px;border:1px solid #e8e8e8;flex-wrap:wrap}
+.tab{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;background:transparent;color:#888;border:none;font-family:inherit}
+.tab:hover{color:#1a1a2e;background:#f5f5f5}
+.tab.active{background:#D0336C;color:#fff}
+.tab.active:hover{background:#b82c5e}
+
+/* Cards */
+.card{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid #e8e8e8;transition:box-shadow .3s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.card-name{font-size:16px;font-weight:600;color:#1a1a2e}
+.card-date{font-size:12px;color:#aaa}
+.card-row{display:flex;gap:8px;margin-bottom:4px;font-size:14px}
+.card-label{color:#999;min-width:80px}
+.card-value{color:#1a1a2e}
+
+.empty{text-align:center;padding:60px 20px;color:#999}
+.empty h2{font-size:18px;margin-bottom:8px;color:#666}
+.loading{text-align:center;padding:60px;color:#999}
 .error{text-align:center;padding:60px;color:#D0336C}
-.refresh{display:inline-block;padding:10px 24px;background:#D0336C;color:#fff;border:none;border-radius:25px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:20px;transition:background .3s}
-.refresh:hover{background:#b82c5e}.logout{display:inline-block;padding:10px 24px;background:transparent;color:#E5E5E5;border:1px solid rgba(255,255,255,.2);border-radius:25px;font-size:14px;cursor:pointer;margin-left:10px;transition:background .3s}
-.logout:hover{background:rgba(255,255,255,.05)}
-.stats{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
-.stat{background:rgba(255,255,255,.05);border-radius:10px;padding:16px 24px;flex:1;min-width:120px;text-align:center}
-.stat-num{font-size:28px;font-weight:700;color:#D0336C}
-.stat-label{font-size:12px;opacity:.5;margin-top:4px}
-.toolbar{display:flex;align-items:center;margin-bottom:20px}
+
+/* Drafts */
+.draft-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fafafa;border-radius:10px;margin-bottom:8px}
+.draft-field{font-size:13px;color:#999;min-width:100px}
+.draft-value{font-size:14px;color:#1a1a2e;font-weight:500;word-break:break-word}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;z-index:999;padding:20px}
+.modal-overlay.active{display:flex}
+.modal{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.modal h2{font-size:20px;margin-bottom:16px}
+.modal .login-input{margin-bottom:12px}
+.modal .login-error{margin-bottom:8px}
 </style></head><body>
 
 <div class="login-wrap" id="loginWrap">
-  <h1>🔐 Вход</h1>
-  <p>Введите пароль для доступа к панели</p>
+  <h1>🔐 Центр управления</h1>
+  <p>Введите пароль для доступа</p>
   <input type="password" class="login-input" id="passInput" placeholder="Пароль" onkeydown="if(event.key==='Enter')checkPass()">
   <button class="login-btn" onclick="checkPass()">Войти</button>
   <div class="login-error" id="loginError">Неверный пароль</div>
 </div>
 
-<div class="container" id="adminPanel">
-  <h1>📋 Заявки с сайта</h1>
-  <div class="toolbar">
-    <button class="refresh" onclick="load()">🔄 Обновить</button>
-    <button class="refresh" onclick="showDrafts()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)">📝 Черновики</button><button class="logout" onclick="showSettings()">⚙️ Настройки</button><button class="logout" onclick="logout()">Выйти</button>
+<div id="dashboardWrap" style="display:none">
+  <div class="header">
+    <h1>🚀 <span>Tretyakov</span> Coach · Центр управления</h1>
+    <div class="header-actions">
+      <button class="header-btn primary" onclick="load()">🔄 Обновить</button>
+      <button class="header-btn outline" onclick="showSettings()">⚙️</button>
+      <button class="header-btn secondary" onclick="logout()">Выйти</button>
+    </div>
   </div>
-  <div id="app"><div class="loading">Загрузка заявок...</div></div>
+  <div class="dashboard">
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="stat-icon">📩</div><div class="stat-value" id="statApps">0</div><div class="stat-label">Заявок</div></div>
+      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-value" id="statDrafts">0</div><div class="stat-label">Черновиков</div></div>
+      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-value" id="statVisitors">—</div><div class="stat-label">Посетителей сегодня</div></div>
+      <div class="stat-card"><div class="stat-icon">📄</div><div class="stat-value" id="statViews">—</div><div class="stat-label">Просмотров</div></div>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" onclick="switchTab('requests',this)">📩 Заявки</button>
+      <button class="tab" onclick="switchTab('drafts',this)">📝 Черновики</button>
+    </div>
+    <div id="app"><div class="loading">Загрузка...</div></div>
+  </div>
 </div>
 
-<script>
-const tgToken = atob('ODg4MDMzNDAzNTpBQUhTZ0I4Z0NMTVM3OUJ3aEluOFpzU01RU0ZtWFpFTE1WWQ==');
-const chatId = '1163907662';
-
-function checkPass() {
-  const pass = document.getElementById('passInput').value;
-  var adminPass=localStorage.getItem("admin_pass")||"admin123";if(pass===adminPass) {
-    document.getElementById('loginWrap').style.display = 'none';
-    document.getElementById('adminPanel').style.display = 'block';
-    document.cookie = 'admin_auth=1;path=/;max-age=' + (86400*7);
-    load();
-  } else {
-    document.getElementById('loginError').style.display = 'block';
-  }
-}
-
-function logout() {
-  document.cookie = 'admin_auth=;path=/;max-age=0';
-  document.getElementById('adminPanel').style.display = 'none';
-  document.getElementById('loginWrap').style.display = 'block';
-  document.getElementById('passInput').value = '';
-  document.getElementById('loginError').style.display = 'none';
-}
-
-if (document.cookie.split(';').some(c => c.trim().startsWith('admin_auth=1'))) {
-  document.getElementById('loginWrap').style.display = 'none';
-  document.getElementById('adminPanel').style.display = 'block';
-  load();
-}
-
-function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
-function formatDate(ts){return new Date(ts*1000).toLocaleString('ru-RU')}
-
-function parseApp(text) {
-  const lines = text.split('\n'); let name='',phone='',email='',message='';
-  lines.forEach(l=>{
-    if(l.startsWith('Имя:')) name=l.replace('Имя:','').trim();
-    if(l.startsWith('Телефон:')) phone=l.replace('Телефон:','').trim();
-    if(l.startsWith('Email:')) email=l.replace('Email:','').trim();
-    if(l.startsWith('Сообщение:')) message=l.replace('Сообщение:','').trim();
-  });
-  return {name,phone,email,message};
-}
-
-
-function showDrafts(){var a=document.getElementById('app');var d=JSON.parse(localStorage.getItem('formDrafts')||'{}');var keys=Object.keys(d);if(!keys.length){a.innerHTML='<div class="empty"><h2>Нет черновиков</h2><p>Пользователи пока ничего не вводили.</p></div><button class="refresh" onclick="load()" style="margin-top:16px">← Назад к заявкам</button>';return}
-var html='<div class="toolbar"><button class="refresh" onclick="load()">← Назад к заявкам</button></div><h2 style="margin-bottom:16px">📝 Черновики (неотправленные)</h2>';keys.forEach(function(k){html+='<div class="card"><div class="card-row"><span class="card-label">Поле</span><span class="card-value">'+k+'</span></div><div class="card-row"><span class="card-label">Значение</span><span class="card-value">'+d[k]+'</span></div></div>'});a.innerHTML=html}
-async function load() {
-  const app=document.getElementById('app');app.innerHTML='<div class="loading">Загрузка заявок...</div>';
-  try{
-    const res=await fetch(`https://api.telegram.org/bot${tgToken}/getUpdates`);
-    const d=await res.json();if(!d.ok)throw new Error(d.description);
-    const apps=d.result.filter(u=>u.message&&u.message.chat&&String(u.message.chat.id)===chatId&&u.message.text&&!u.message.text.startsWith('/'));
-    if(!apps.length){app.innerHTML='<div class="empty"><h2>Пока нет заявок</h2><p>Когда кто-то оставит заявку, она появится здесь.</p></div>';return}
-    let html=`<div class="stats"><div class="stat"><div class="stat-num">${apps.length}</div><div class="stat-label">Всего заявок</div></div></div>`;
-    apps.reverse().forEach(u=>{
-      const p=parseApp(u.message.text);
-      html+=`<div class="card"><div class="card-header"><div class="card-name">${escapeHtml(p.name||'Без имени')}</div><div class="card-date">${formatDate(u.message.date)}</div></div><div class="card-row"><span class="card-label">Телефон</span><span class="card-value">${escapeHtml(p.phone)}</span></div><div class="card-row"><span class="card-label">Email</span><span class="card-value">${escapeHtml(p.email)}</span></div>${p.message&&p.message!=='—'?`<div class="card-row"><span class="card-label">Сообщение</span><span class="card-value">${escapeHtml(p.message)}</span></div>`:''}</div>`
-    });
-    app.innerHTML=html;
-  }catch(e){app.innerHTML=`<div class="error">Ошибка загрузки: ${escapeHtml(e.message)}</div>`}
-}
-</script>
-
-<div class="modal" id="settingsModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:999">
-  <div style="background:#2a1d3a;padding:32px;border-radius:16px;max-width:400px;width:90%">
-    <h2 style="font-size:20px;margin-bottom:16px">⚙️ Настройки</h2>
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <h2>⚙️ Настройки</h2>
     <input type="password" class="login-input" id="oldPass" placeholder="Старый пароль">
     <input type="password" class="login-input" id="newPass" placeholder="Новый пароль">
     <input type="password" class="login-input" id="confirmPass" placeholder="Повторите пароль">
     <div class="login-error" id="settingsError"></div>
     <button class="login-btn" onclick="changePass()">Сохранить</button>
-    <button class="login-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.2);margin-top:8px" onclick="closeSettings()">Отмена</button>
+    <button class="login-btn" onclick="closeSettings()">Отмена</button>
   </div>
 </div>
-</body></html>
+
+<script>
+var tgToken = atob('ODg4MDMzNDAzNTpBQUhTZ0I4Z0NMTVM3OUJ3aEluOFpzU01RU0ZtWFpFTE1WWQ==');
+var chatId = '1163907662';
+var currentTab = 'requests';
+
+function checkPass(){var p=document.getElementById('passInput').value;var ap=localStorage.getItem('admin_pass')||'admin123';if(p===ap){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';document.cookie='admin_auth=1;path=/;max-age='+(86400*7);load()}else{document.getElementById('loginError').style.display='block'}}
+function logout(){document.cookie='admin_auth=;path=/;max-age=0';document.getElementById('dashboardWrap').style.display='none';document.getElementById('loginWrap').style.display='block';document.getElementById('passInput').value='';document.getElementById('loginError').style.display='none'}
+if(document.cookie.split(';').some(function(c){return c.trim().startsWith('admin_auth=1')})){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';load()}
+function showSettings(){document.getElementById('settingsModal').classList.add('active')}
+function closeSettings(){document.getElementById('settingsModal').classList.remove('active');document.getElementById('settingsError').style.display='none'}
+function changePass(){var o=document.getElementById('oldPass').value,n=document.getElementById('newPass').value,c=document.getElementById('confirmPass').value;var p=localStorage.getItem('admin_pass')||'admin123';if(o!==p){document.getElementById('settingsError').textContent='Старый пароль неверный';document.getElementById('settingsError').style.display='block';return}if(n.length<4){document.getElementById('settingsError').textContent='Минимум 4 символа';document.getElementById('settingsError').style.display='block';return}if(n!==c){document.getElementById('settingsError').textContent='Пароли не совпадают';document.getElementById('settingsError').style.display='block';return}localStorage.setItem('admin_pass',n);closeSettings();alert('Пароль изменён!')}
+function switchTab(tab,btn){currentTab=tab;document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');load()}
+function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
+function formatDate(ts){return new Date(ts*1000).toLocaleString('ru-RU')}
+function parseApp(text){var lines=text.split('\n');var r={name:'',phone:'',email:'',message:''};lines.forEach(function(l){if(l.startsWith('Имя:'))r.name=l.replace('Имя:','').trim();if(l.startsWith('Телефон:'))r.phone=l.replace('Телефон:','').trim();if(l.startsWith('Email:'))r.email=l.replace('Email:','').trim();if(l.startsWith('Сообщение:'))r.message=l.replace('Сообщение:','').trim()});return r}
+function showDrafts(){var d=JSON.parse(localStorage.getItem('formDrafts')||'{}');var keys=Object.keys(d);var app=document.getElementById('app');document.getElementById('statDrafts').textContent=keys.length;if(!keys.length){app.innerHTML='<div class=\"empty\"><h2>Нет черновиков</h2><p>Данные не сохранялись.</p></div>';return}
+var html='';keys.forEach(function(k){html+='<div class=\"draft-item\"><span class=\"draft-field\">'+k+'</span><span class=\"draft-value\">'+escapeHtml(d[k])+'</span></div>'});app.innerHTML=html}
+
+async function load(){var app=document.getElementById('app');app.innerHTML='<div class=\"loading\">Загрузка...</div>';try{
+  var res=await fetch('https://api.telegram.org/bot'+tgToken+'/getUpdates');var d=await res.json();if(!d.ok)throw new Error(d.description);
+  var apps=d.result.filter(function(u){return u.message&&u.message.chat&&String(u.message.chat.id)===chatId&&u.message.text&&!u.message.text.startsWith('/')});
+  document.getElementById('statApps').textContent=apps.length;
+  var drafts=JSON.parse(localStorage.getItem('formDrafts')||'{}');document.getElementById('statDrafts').textContent=Object.keys(drafts).length;
+  if(currentTab==='drafts'){showDrafts();return}
+  if(!apps.length){app.innerHTML='<div class=\"empty\"><h2>Пока нет заявок</h2></div>';return}
+  var html='';apps.reverse().forEach(function(u){var p=parseApp(u.message.text);html+='<div class=\"card\"><div class=\"card-header\"><div class=\"card-name\">'+escapeHtml(p.name||'Без имени')+'</div><div class=\"card-date\">'+formatDate(u.message.date)+'</div></div><div class=\"card-row\"><span class=\"card-label\">📞</span><span class=\"card-value\">'+escapeHtml(p.phone)+'</span></div><div class=\"card-row\"><span class=\"card-label\">✉️</span><span class=\"card-value\">'+escapeHtml(p.email)+'</span></div>'+(p.message&&p.message!=='—'?'<div class=\"card-row\"><span class=\"card-label\">💬</span><span class=\"card-value\">'+escapeHtml(p.message)+'</span></div>':'')+'</div>'});app.innerHTML=html
+}catch(e){app.innerHTML='<div class=\"error\">Ошибка: '+escapeHtml(e.message)+'</div>'}}
+</script></body></html>
