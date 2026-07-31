@@ -1227,6 +1227,73 @@ body[data-mode="amateur"] .hero-image img {
   margin-top: -2px;
 }
 
+.medal-nav {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.medal-arrow {
+  background: none;
+  border: 1.5px solid rgba(48,48,48,0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.medal-arrow:hover {
+  background: rgba(48,48,48,0.05);
+}
+
+.medal-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.medal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(48,48,48,0.15);
+  transition: background 0.3s;
+}
+
+.medal-dot.active {
+  background: var(--color-accent-red);
+}
+
+@media (max-width: 768px) {
+  .strip-medals {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .medal-slide {
+    display: none;
+  }
+
+  .medal-slide.active {
+    display: block;
+  }
+
+  .medal-nav {
+    display: flex;
+  }
+
+  .curve-strip {
+    padding: 20px 0 40px;
+  }
+}
+
 .strip-medals .medal-icon {
   font-size: 40px;
   line-height: 1;

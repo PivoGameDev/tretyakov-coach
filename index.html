@@ -202,27 +202,36 @@
 
   <div class="curve-strip">
     <div class="container">
-      <div class="strip-medals">
-        <div class="medal-col">
+      <div class="strip-medals" id="medalCarousel">
+        <div class="medal-col medal-slide active">
           <div class="medal-icon">🥇</div>
           <ul class="medal-list">
             <li>Первенство г. Москвы «Олимпийские надежды» — 2005</li>
             <li>Финал Кубка России — 2009, Тверь</li>
           </ul>
         </div>
-        <div class="medal-col">
+        <div class="medal-col medal-slide">
           <div class="medal-icon">🥈</div>
           <ul class="medal-list">
             <li>Nebelhorn Trophy — 2009, Оберстдорф (Германия)</li>
             <li>NRW Trophy — 2010, Дортмунд (Германия)</li>
           </ul>
         </div>
-        <div class="medal-col">
+        <div class="medal-col medal-slide">
           <div class="medal-icon">🥉</div>
           <ul class="medal-list">
             <li>ISU JGP Tallinn Cup — 2005, Таллин (Эстония)</li>
             <li>NRW Trophy — 2007, Дортмунд (Германия)</li>
           </ul>
+        </div>
+        <div class="medal-nav" id="medalNav">
+          <button class="medal-arrow medal-arrow--left" id="medalLeft">←</button>
+          <div class="medal-dots" id="medalDots">
+            <span class="medal-dot active"></span>
+            <span class="medal-dot"></span>
+            <span class="medal-dot"></span>
+          </div>
+          <button class="medal-arrow medal-arrow--right" id="medalRight">→</button>
         </div>
       </div>
     </div>

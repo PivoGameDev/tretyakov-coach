@@ -664,4 +664,32 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = 'thanks.html';
     });
   }
+
+  // ========== MEDAL CAROUSEL ==========
+  var medalIndex = 0;
+  var medalSlides = document.querySelectorAll('.medal-slide');
+  var medalDots = document.querySelectorAll('.medal-dot');
+  var medalLeft = document.getElementById('medalLeft');
+  var medalRight = document.getElementById('medalRight');
+
+  function showMedal(i) {
+    if (i < 0) i = medalSlides.length - 1;
+    if (i >= medalSlides.length) i = 0;
+    medalIndex = i;
+    medalSlides.forEach(function(s, idx) {
+      s.classList.toggle('active', idx === i);
+    });
+    medalDots.forEach(function(d, idx) {
+      d.classList.toggle('active', idx === i);
+    });
+  }
+
+  if (medalLeft && medalRight) {
+    medalLeft.addEventListener('click', function(){ showMedal(medalIndex - 1); });
+    medalRight.addEventListener('click', function(){ showMedal(medalIndex + 1); });
+  }
+
+  medalDots.forEach(function(dot, idx) {
+    dot.addEventListener('click', function(){ showMedal(idx); });
+  });
 });
