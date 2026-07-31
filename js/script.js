@@ -658,16 +658,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ========== CONTACTS FORM ==========
-  const contactsForm = document.getElementById('contactsForm');
-
-  if (contactsForm) {
-    contactsForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const message = this.querySelector('textarea').value.trim();
-      if (!message) { alert('Напишите сообщение.'); return; }
-      submitForm({ name: '—', phone: '—', email: '—', message });
-    });
-  }
+  document.getElementById('contactsForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = this.querySelector('textarea').value.trim();
+    var check = this.querySelector('input[type=checkbox]');
+    if (!msg) { alert('Напишите сообщение.'); return; }
+    if (!check.checked) { alert('Подтвердите согласие на обработку данных.'); return; }
+    var fd = new URLSearchParams();
+    fd.append('chat_id', TG_CHAT_ID);
+    fd.append('text', 'Новая заявка с сайта\n\nИмя: -\nТелефон: -\nEmail: -\nСообщение: ' + msg);
+    fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', { method: 'POST', body: fd })
+      .then(function(){ window.location.href = 'thanks.html'; })
+      .catch(function(){ window.location.href = 'thanks.html'; });
+  });
 
   // ========== MODAL FORM ==========
   const modalForm = document.getElementById('modalForm');
