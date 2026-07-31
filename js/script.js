@@ -615,11 +615,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
+  const GS_URL = 'https://script.google.com/macros/s/AKfycbx5EmaRocTlGmVkwlZzLrv2hgh5yWQLnx2qpQI1M0p7bknFAUXU9_VTIyIlMazVVjWvvQ/exec';
+
   function sendToBot(data) {
-    var msg = 'Заявка с сайта\nИмя: ' + (data.name || '—') + '\nТел: ' + (data.phone || '—') + '\nEmail: ' + (data.email || '—') + (data.message ? '\nСообщение: ' + data.message : '');
-    new Image().src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(msg);
-    var mailto = 'mailto:89ivantretyakov@gmail.com?subject=Заявка с сайта&body=' + encodeURIComponent(msg);
-    window.location.href = mailto;
+    var fd = new URLSearchParams();
+    fd.append('name', data.name || '—');
+    fd.append('phone', data.phone || '—');
+    fd.append('email', data.email || '—');
+    fd.append('message', data.message || '');
+    fetch(GS_URL, { method: 'POST', body: fd }).catch(function(){});
   }
 
   // ========== CONTACTS FORM ==========
