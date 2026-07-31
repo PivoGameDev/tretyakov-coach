@@ -1463,7 +1463,7 @@ body[data-mode="amateur"] .hero-image img {
   .trainer-image {
     order: 4;
     margin-top: 10px;
-    margin-bottom: -60px;
+    margin-bottom: -100px;
   }
 
   .hero-section {
@@ -1679,7 +1679,7 @@ body[data-mode="amateur"] .hero-image img {
 
 @media (min-width: 678px) and (max-width: 992px) {
   .trainer-image {
-    margin-bottom: 0;
+    margin-bottom: -100px;
   }
 }
 
