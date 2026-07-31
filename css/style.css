@@ -1201,14 +1201,14 @@ body[data-mode="amateur"] .hero-image img {
   position: relative;
   z-index: 1;
   background: var(--color-light);
-  padding: 50px 0;
+  padding: 25px 0 50px;
 }
 
 .curve-strip::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 12px;
+  height: 20px;
   background: url('../bg-ice.jpg') center / cover no-repeat;
   pointer-events: none;
 }
