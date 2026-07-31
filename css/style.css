@@ -1227,6 +1227,12 @@ body[data-mode="amateur"] .hero-image img {
   margin-top: -2px;
 }
 
+@media (max-width: 768px) {
+  .strip-medals .medal-col {
+    margin-top: 0 !important;
+  }
+}
+
 .medal-nav {
   display: none;
   align-items: center;
@@ -1278,19 +1284,32 @@ body[data-mode="amateur"] .hero-image img {
   }
 
   .strip-medals {
-    min-height: 220px;
+    position: relative;
+    height: 230px;
+    overflow: hidden;
   }
 
   .medal-slide {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
   }
 
   .medal-slide.active {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    position: absolute;
   }
 
   .medal-nav {
     display: flex;
+    position: relative;
+    z-index: 2;
+    margin-top: 180px;
   }
 
   .curve-strip {
