@@ -615,15 +615,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
-  const TG_URL = 'https://script.google.com/macros/s/AKfycbwmIIXjQrv3MeV4WzQhcdubMhLP4kmNd1xtj-rslDqPJsc5ZGCPRcpCg6i5Ia4_0D12/exec';
-
   function sendToBot(data) {
-    var fd = new URLSearchParams();
-    fd.append('name', data.name || '—');
-    fd.append('phone', data.phone || '—');
-    fd.append('email', data.email || '—');
-    fd.append('message', data.message || '');
-    fetch(TG_URL, { method: 'POST', body: fd }).catch(function(){});
+    var msg = 'Заявка с сайта\n\nИмя: ' + (data.name || '—') + '\nТелефон: ' + (data.phone || '—') + '\nEmail: ' + (data.email || '—') + (data.message ? '\nСообщение: ' + data.message : '');
+    var url = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
   }
 
   // ========== CONTACTS FORM ==========
