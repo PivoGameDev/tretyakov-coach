@@ -615,20 +615,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
-  function submitForm(data) {
-    const msg = '📩 Новая заявка с сайта\n\nИмя: ' + data.name + '\nТелефон: ' + data.phone + '\nEmail: ' + data.email + (data.message ? '\nСообщение: ' + data.message : '');
-    const formData = new URLSearchParams();
-    formData.append('chat_id', TG_CHAT_ID);
-    formData.append('text', msg);
-    fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
-      method: 'POST',
-      body: formData
-    }).then(function(r) {
-      var thanks = { ru: 'thanks.html', en: 'thanks-en.html', zh: 'thanks-zh.html', th: 'thanks-th.html' };
-      window.location.href = thanks[currentLang] || 'thanks.html';
-    }).catch(function() {
-      window.location.href = 'thanks.html';
-    });
+  function tgSend(text) {
+    var img = new Image();
+    img.src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
   }
 
   // ========== CONTACTS FORM ==========
@@ -638,12 +627,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var check = this.querySelector('input[type=checkbox]');
     if (!msg) { alert('Напишите сообщение.'); return; }
     if (!check.checked) { alert('Подтвердите согласие на обработку данных.'); return; }
-    var fd = new URLSearchParams();
-    fd.append('chat_id', TG_CHAT_ID);
-    fd.append('text', 'Новая заявка с сайта\n\nИмя: -\nТелефон: -\nEmail: -\nСообщение: ' + msg);
-    fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', { method: 'POST', body: fd })
-      .then(function(){ window.location.href = 'thanks.html'; })
-      .catch(function(){ window.location.href = 'thanks.html'; });
+    tgSend('Новая заявка с сайта\n\nИмя: -\nТелефон: -\nEmail: -\nСообщение: ' + msg);
+    window.location.href = 'thanks.html';
   });
 
   // ========== MODAL FORM ==========
