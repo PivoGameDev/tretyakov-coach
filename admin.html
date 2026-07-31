@@ -1,9 +1,6 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Центр управления — Tretyakov Coach</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Центр управления</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet"><style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
-
-/* Login */
 .login-wrap{max-width:380px;width:100%;padding:20px;margin:40px auto}
 .login-wrap h1{font-family:'Unbounded',sans-serif;font-size:24px;margin-bottom:4px;color:#D0336C}
 .login-wrap p{font-size:14px;color:#888;margin-bottom:24px}
@@ -11,11 +8,7 @@ body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;
 .login-input:focus{border-color:#D0336C}
 .login-btn{width:100%;padding:14px;background:#D0336C;color:#fff;border:none;border-radius:25px;font-size:15px;font-weight:600;cursor:pointer;transition:background .3s}
 .login-btn:hover{background:#b82c5e}
-.login-btn+.login-btn{margin-top:8px;background:transparent;border:2px solid #ddd;color:#666}
-.login-btn+.login-btn:hover{background:#f5f5f5}
 .login-error{color:#D0336C;font-size:13px;margin-top:10px;text-align:center;display:none}
-
-/* Dashboard */
 .header{background:#fff;border-bottom:1px solid #e8e8e8;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .header h1{font-family:'Unbounded',sans-serif;font-size:18px;color:#1a1a2e;letter-spacing:1px}
 .header h1 span{color:#D0336C}
@@ -25,127 +18,178 @@ body{font-family:'Montserrat',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;
 .header-btn.primary:hover{background:#b82c5e}
 .header-btn.secondary{background:#f0f2f5;color:#555}
 .header-btn.secondary:hover{background:#e0e0e0}
-.header-btn.outline{background:transparent;border:1.5px solid #ddd;color:#666}
-.header-btn.outline:hover{background:#f5f5f5}
-
 .dashboard{padding:24px;max-width:1200px;margin:0 auto}
-
-/* Stats Grid */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
 .stat-card{background:#fff;border-radius:14px;padding:20px;border:1px solid #e8e8e8;position:relative;overflow:hidden}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#D0336C;opacity:.5}
-.stat-card .stat-icon{font-size:24px;margin-bottom:8px}
 .stat-card .stat-value{font-size:28px;font-weight:700;color:#1a1a2e;font-family:'Unbounded',sans-serif}
 .stat-card .stat-label{font-size:12px;color:#999;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
-.stat-card .stat-trend{font-size:11px;margin-top:6px;color:#4CAF50}
-
-/* Content Tabs */
 .tabs{display:flex;gap:4px;margin-bottom:20px;background:#fff;border-radius:12px;padding:4px;border:1px solid #e8e8e8;flex-wrap:wrap}
 .tab{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;background:transparent;color:#888;border:none;font-family:inherit}
 .tab:hover{color:#1a1a2e;background:#f5f5f5}
 .tab.active{background:#D0336C;color:#fff}
-.tab.active:hover{background:#b82c5e}
-
-/* Cards */
-.card{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid #e8e8e8;transition:box-shadow .3s}
-.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.card{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid #e8e8e8}
 .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .card-name{font-size:16px;font-weight:600;color:#1a1a2e}
 .card-date{font-size:12px;color:#aaa}
 .card-row{display:flex;gap:8px;margin-bottom:4px;font-size:14px}
 .card-label{color:#999;min-width:80px}
 .card-value{color:#1a1a2e}
-
 .empty{text-align:center;padding:60px 20px;color:#999}
-.empty h2{font-size:18px;margin-bottom:8px;color:#666}
 .loading{text-align:center;padding:60px;color:#999}
 .error{text-align:center;padding:60px;color:#D0336C}
-
-/* Drafts */
-.draft-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fafafa;border-radius:10px;margin-bottom:8px}
-.draft-field{font-size:13px;color:#999;min-width:100px}
-.draft-value{font-size:14px;color:#1a1a2e;font-weight:500;word-break:break-word}
-
-/* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);align-items:center;justify-content:center;z-index:999;padding:20px}
-.modal-overlay.active{display:flex}
-.modal{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.1)}
-.modal h2{font-size:20px;margin-bottom:16px}
-.modal .login-input{margin-bottom:12px}
-.modal .login-error{margin-bottom:8px}
 </style></head><body>
-
 <div class="login-wrap" id="loginWrap">
-  <h1>🔐 Центр управления</h1>
+  <h1>Вход в Центр управления</h1>
   <p>Введите пароль для доступа</p>
   <input type="password" class="login-input" id="passInput" placeholder="Пароль" onkeydown="if(event.key==='Enter')checkPass()">
   <button class="login-btn" onclick="checkPass()">Войти</button>
   <div class="login-error" id="loginError">Неверный пароль</div>
 </div>
-
 <div id="dashboardWrap" style="display:none">
   <div class="header">
-    <h1>🚀 <span>Tretyakov</span> Coach · Центр управления</h1>
+    <h1>Tretyakov Coach · Центр управления</h1>
     <div class="header-actions">
-      <button class="header-btn primary" onclick="load()">🔄 Обновить</button>
-      
+      <button class="header-btn primary" onclick="load()">Обновить</button>
       <button class="header-btn secondary" onclick="logout()">Выйти</button>
     </div>
   </div>
   <div class="dashboard">
-    <div class="stats-grid" id="statsGrid">
-      <div class="stat-card"><div class="stat-icon">📩</div><div class="stat-value" id="statApps">0</div><div class="stat-label">Заявок</div></div>
-      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-value" id="statDrafts">0</div><div class="stat-label">Черновиков</div></div>
-      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-value" id="statVisitors">—</div><div class="stat-label">Посетителей сегодня</div></div>
-      <div class="stat-card"><div class="stat-icon">📄</div><div class="stat-value" id="statViews">—</div><div class="stat-label">Просмотров</div></div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-value" id="statApps">0</div><div class="stat-label">Заявок</div></div>
+      <div class="stat-card"><div class="stat-value" id="statDrafts">0</div><div class="stat-label">Черновиков</div></div>
     </div>
-
-    <div class="tabs" id="tabs">
-      <button class="tab active" onclick="switchTab('requests',this)">📩 Заявки</button>
-      <button class="tab" onclick="switchTab('drafts',this)">📝 Черновики</button>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('apps',this)">Заявки</button>
+      <button class="tab" onclick="switchTab('drafts',this)">Черновики</button>
     </div>
     <div id="app"><div class="loading">Загрузка...</div></div>
   </div>
 </div>
-
-<div style="display:none">
-  <div class="modal">
-    <h2>⚙️ Настройки</h2>
-    <input type="password" class="login-input" id="oldPass" placeholder="Старый пароль">
-    <input type="password" class="login-input" id="newPass" placeholder="Новый пароль">
-    <input type="password" class="login-input" id="confirmPass" placeholder="Повторите пароль">
-    <div class="login-error" id="settingsError"></div>
-    <button class="login-btn" onclick="changePass()">Сохранить</button>
-    <button class="login-btn" onclick="closeSettings()">Отмена</button>
-  </div>
-</div>
-
 <script>
 var tgToken = atob('ODg4MDMzNDAzNTpBQUhTZ0I4Z0NMTVM3OUJ3aEluOFpzU01RU0ZtWFpFTE1WWQ==');
 var chatId = '1163907662';
-var currentTab = 'requests';
+var currentTab = 'apps';
 
-function checkPass(){var p=document.getElementById('passInput').value;var ap='3755';if(p===ap){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';document.cookie='admin_auth=1;path=/;max-age='+(86400*7);load()}else{document.getElementById('loginError').style.display='block'}}
-function logout(){document.cookie='admin_auth=;path=/;max-age=0';document.getElementById('dashboardWrap').style.display='none';document.getElementById('loginWrap').style.display='block';document.getElementById('passInput').value='';document.getElementById('loginError').style.display='none'}
-if(document.cookie.split(';').some(function(c){return c.trim().startsWith('admin_auth=1')})){document.getElementById('loginWrap').style.display='none';document.getElementById('dashboardWrap').style.display='block';load()}
-function switchTab(tab,btn){currentTab=tab;document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');load()}
-function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
-function formatDate(ts){return new Date(ts*1000).toLocaleString('ru-RU')}
-function parseApp(text){var lines=text.split('\n');var r={name:'',phone:'',email:'',message:''};lines.forEach(function(l){if(l.startsWith('Имя:'))r.name=l.replace('Имя:','').trim();if(l.startsWith('Телефон:'))r.phone=l.replace('Телефон:','').trim();if(l.startsWith('Email:'))r.email=l.replace('Email:','').trim();if(l.startsWith('Сообщение:'))r.message=l.replace('Сообщение:','').trim()});return r}
+function checkPass(){
+  var p = document.getElementById('passInput').value;
+  if (p === '3755') {
+    document.getElementById('loginWrap').style.display = 'none';
+    document.getElementById('dashboardWrap').style.display = 'block';
+    document.cookie = 'admin_auth=1;path=/;max-age=' + (86400*7);
+    load();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
 
-function showDrafts(){var app=document.getElementById('app');app.innerHTML='<div class="loading">Загрузка черновиков...</div>';fetch('https://api.telegram.org/bot'+tgToken+'/getUpdates').then(function(r){return r.json()}).then(function(d){if(!d.ok)throw new Error(d.description);var msgs=d.result.filter(function(u){return u.message&&u.message.text&&u.message.text.startsWith('📝')});if(!msgs.length){app.innerHTML='<div class="empty"><h2>Нет черновиков</h2></div>';return}
-var html='';msgs.reverse().forEach(function(u){var t=u.message.text.replace('📝 Черновик
-','');html+='<div class="card"><div class="card-header"><div class="card-date">'+formatDate(u.message.date)+'</div></div><div class="card-row" style="white-space:pre-wrap;font-size:13px">'+escapeHtml(t)+'</div></div>'});app.innerHTML=html}).catch(function(e){app.innerHTML='<div class="error">'+escapeHtml(e.message)+'</div>'})}
-function showDrafts(){var d=JSON.parse(localStorage.getItem('formDrafts')||'{}');var keys=Object.keys(d);var app=document.getElementById('app');document.getElementById('statDrafts').textContent=keys.length;if(!keys.length){app.innerHTML='<div class=\"empty\"><h2>Нет черновиков</h2><p>Данные не сохранялись.</p></div>';return}
-var html='';keys.forEach(function(k){html+='<div class=\"draft-item\"><span class=\"draft-field\">'+k+'</span><span class=\"draft-value\">'+escapeHtml(d[k])+'</span></div>'});app.innerHTML=html}
+function logout(){
+  document.cookie = 'admin_auth=;path=/;max-age=0';
+  document.getElementById('dashboardWrap').style.display = 'none';
+  document.getElementById('loginWrap').style.display = 'block';
+  document.getElementById('passInput').value = '';
+  document.getElementById('loginError').style.display = 'none';
+}
 
-async function load(){var app=document.getElementById('app');app.innerHTML='<div class=\"loading\">Загрузка...</div>';try{
-  var res=await fetch('https://api.telegram.org/bot'+tgToken+'/getUpdates');var d=await res.json();if(!d.ok)throw new Error(d.description);
-  var apps=d.result.filter(function(u){return u.message&&u.message.chat&&String(u.message.chat.id)===chatId&&u.message.text&&!u.message.text.startsWith('/')});
-  document.getElementById('statApps').textContent=apps.length;
-  var drafts=JSON.parse(localStorage.getItem('formDrafts')||'{}');document.getElementById('statDrafts').textContent=Object.keys(drafts).length;
-  if(currentTab==='drafts'){showDrafts();return}
-  if(!apps.length){app.innerHTML='<div class=\"empty\"><h2>Пока нет заявок</h2></div>';return}
-  var html='';apps.reverse().forEach(function(u){var p=parseApp(u.message.text);html+='<div class=\"card\"><div class=\"card-header\"><div class=\"card-name\">'+escapeHtml(p.name||'Без имени')+'</div><div class=\"card-date\">'+formatDate(u.message.date)+'</div></div><div class=\"card-row\"><span class=\"card-label\">📞</span><span class=\"card-value\">'+escapeHtml(p.phone)+'</span></div><div class=\"card-row\"><span class=\"card-label\">✉️</span><span class=\"card-value\">'+escapeHtml(p.email)+'</span></div>'+(p.message&&p.message!=='—'?'<div class=\"card-row\"><span class=\"card-label\">💬</span><span class=\"card-value\">'+escapeHtml(p.message)+'</span></div>':'')+'</div>'});app.innerHTML=html
-}catch(e){app.innerHTML='<div class=\"error\">Ошибка: '+escapeHtml(e.message)+'</div>'}}
+if (document.cookie.indexOf('admin_auth=1') >= 0) {
+  document.getElementById('loginWrap').style.display = 'none';
+  document.getElementById('dashboardWrap').style.display = 'block';
+  load();
+}
+
+function switchTab(tab, btn) {
+  currentTab = tab;
+  var btns = document.querySelectorAll('.tab');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  btn.classList.add('active');
+  load();
+}
+
+function escapeHtml(t) {
+  var d = document.createElement('div');
+  d.textContent = t;
+  return d.innerHTML;
+}
+
+function formatDate(ts) {
+  var d = new Date(ts * 1000);
+  return d.toLocaleString('ru-RU');
+}
+
+function parseApp(text) {
+  var lines = text.split('\n');
+  var r = {name:'', phone:'', email:'', message:''};
+  for (var i = 0; i < lines.length; i++) {
+    var l = lines[i];
+    if (l.indexOf('Имя:') === 0) r.name = l.substr(4).trim();
+    if (l.indexOf('Телефон:') === 0) r.phone = l.substr(8).trim();
+    if (l.indexOf('Email:') === 0) r.email = l.substr(6).trim();
+    if (l.indexOf('Сообщение:') === 0) r.message = l.substr(10).trim();
+  }
+  return r;
+}
+
+async function load() {
+  var app = document.getElementById('app');
+  app.innerHTML = '<div class="loading">Загрузка...</div>';
+  try {
+    var res = await fetch('https://api.telegram.org/bot' + tgToken + '/getUpdates');
+    var d = await res.json();
+    if (!d.ok) throw new Error(d.description);
+
+    var all = [];
+    for (var i = 0; i < d.result.length; i++) {
+      var u = d.result[i];
+      if (u.message && u.message.chat && String(u.message.chat.id) === chatId && u.message.text) {
+        all.push(u);
+      }
+    }
+
+    var apps = [];
+    var draftsList = [];
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].message.text.indexOf('\uD83D\uDCDD') === 0) {
+        draftsList.push(all[i]);
+      } else {
+        apps.push(all[i]);
+      }
+    }
+
+    document.getElementById('statApps').textContent = apps.length;
+    document.getElementById('statDrafts').textContent = draftsList.length;
+
+    if (currentTab === 'drafts') {
+      if (draftsList.length === 0) {
+        app.innerHTML = '<div class="empty"><h2>Нет черновиков</h2></div>';
+        return;
+      }
+      var html = '';
+      for (var i = draftsList.length - 1; i >= 0; i--) {
+        var u = draftsList[i];
+        html += '<div class="card"><div class="card-row" style="white-space:pre-wrap;font-size:13px">' + escapeHtml(u.message.text) + '</div><div class="card-date" style="text-align:right;margin-top:8px;color:#aaa;font-size:12px">' + formatDate(u.message.date) + '</div></div>';
+      }
+      app.innerHTML = html;
+      return;
+    }
+
+    if (apps.length === 0) {
+      app.innerHTML = '<div class="empty"><h2>Пока нет заявок</h2></div>';
+      return;
+    }
+
+    var html = '';
+    for (var i = apps.length - 1; i >= 0; i--) {
+      var u = apps[i];
+      var p = parseApp(u.message.text);
+      html += '<div class="card"><div class="card-header"><div class="card-name">' + escapeHtml(p.name || 'Без имени') + '</div><div class="card-date">' + formatDate(u.message.date) + '</div></div><div class="card-row"><span class="card-label">Телефон</span><span class="card-value">' + escapeHtml(p.phone) + '</span></div><div class="card-row"><span class="card-label">Email</span><span class="card-value">' + escapeHtml(p.email) + '</span></div>';
+      if (p.message && p.message !== '\u2014') {
+        html += '<div class="card-row"><span class="card-label">Сообщение</span><span class="card-value">' + escapeHtml(p.message) + '</span></div>';
+      }
+      html += '</div>';
+    }
+    app.innerHTML = html;
+  } catch(e) {
+    app.innerHTML = '<div class="error">Ошибка: ' + escapeHtml(e.message) + '</div>';
+  }
+}
 </script></body></html>
