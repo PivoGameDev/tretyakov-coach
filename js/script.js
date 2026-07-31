@@ -616,15 +616,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_CHAT_ID = '1163907662';
 
   function submitForm(data) {
-    const msg = `📩 Новая заявка с сайта\n\nИмя: ${data.name}\nТелефон: ${data.phone}\nEmail: ${data.email}${data.message ? '\nСообщение: ' + data.message : ''}`;
-    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+    const msg = '📩 Новая заявка с сайта\n\nИмя: ' + data.name + '\nТелефон: ' + data.phone + '\nEmail: ' + data.email + (data.message ? '\nСообщение: ' + data.message : '');
+    const formData = new URLSearchParams();
+    formData.append('chat_id', TG_CHAT_ID);
+    formData.append('text', msg);
+    fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg })
-    }).then(() => {
-      const thanks = { ru: 'thanks.html', en: 'thanks-en.html', zh: 'thanks-zh.html', th: 'thanks-th.html' };
+      body: formData
+    }).then(function(r) {
+      var thanks = { ru: 'thanks.html', en: 'thanks-en.html', zh: 'thanks-zh.html', th: 'thanks-th.html' };
       window.location.href = thanks[currentLang] || 'thanks.html';
-    }).catch(() => {
+    }).catch(function() {
       window.location.href = 'thanks.html';
     });
   }
@@ -645,10 +647,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (modalPhone) msg += 'Телефон: ' + modalPhone + '\n';
         if (modalEmail) msg += 'Email: ' + modalEmail + '\n';
         if (draftText) msg += 'Сообщение: ' + draftText;
-        fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg })
-        }).catch(() => {});
+        var fd = new URLSearchParams();
+        fd.append('chat_id', TG_CHAT_ID);
+        fd.append('text', msg);
+        fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
+          method: 'POST', body: fd
+        }).catch(function(){});
       }, 2000);
     });
   });
