@@ -119,6 +119,9 @@ ul {
   .curve-skating {
     clip-path: url(#clip-wave-mob-sk);
   }
+  .curve-ofp-top {
+    margin-top: 0;
+  }
   .curve-contacts {
     clip-path: url(#clip-wave-mob-ct);
   }
