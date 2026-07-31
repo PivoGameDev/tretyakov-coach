@@ -1201,7 +1201,7 @@ body[data-mode="amateur"] .hero-image img {
   position: relative;
   z-index: 1;
   background: var(--color-light);
-  padding: 12px 0 80px;
+  padding: 12px 0 110px;
 }
 
 .curve-strip::before {
