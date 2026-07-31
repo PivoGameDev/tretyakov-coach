@@ -663,15 +663,15 @@ body[data-mode="amateur"] .hero-image img {
 }
 
 .trainer-list-arrow::before {
-  content: '↓';
-  color: var(--color-plus-red);
-  font-weight: 900;
-  font-size: 22px;
-  line-height: 1;
-  flex-shrink: 0;
-  width: 14px;
-  text-align: center;
+  content: '';
   display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--color-plus-red);
+  margin-top: 6px;
+  flex-shrink: 0;
 }
 
 /* ========== SKATING SECTION ========== */
@@ -1418,14 +1418,15 @@ body[data-mode="amateur"] .hero-image img {
   }
 
   .trainer-list-arrow::before {
-    content: '↓';
-    color: var(--color-plus-red);
-    font-weight: 900;
-    font-size: 18px;
-    width: 14px;
-    flex-shrink: 0;
-    text-align: center;
+    content: '';
     display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--color-plus-red);
+    margin-top: 6px;
+    flex-shrink: 0;
   }
 
   .trainer-list li span {
