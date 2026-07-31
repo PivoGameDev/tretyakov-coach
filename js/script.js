@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentMode = 'pro';
 
   const menuText = {
-    ru: { trainer: 'Тренер', skating: 'Лёд', ofp: 'ОФП', sfp: 'СФП', online: 'Online', contacts: 'Контакты', 'video-title': 'Видео прыжков', 'video-4s': '4S (четверной сальхов)', 'video-3lz': '3Lz (тройной лутц)' },
-    en: { trainer: 'Coach', skating: 'Ice', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'Contacts', 'video-title': 'Jump Videos', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)' },
-    zh: { trainer: '教练', skating: '冰', ofp: '体能', sfp: '专项', online: '在线', contacts: '联系', 'video-title': '跳跃视频', 'video-4s': '4S (后内结环四周跳)', 'video-3lz': '3Lz (勾手三周跳)' },
-    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)' }
+    ru: { trainer: 'Тренер', skating: 'Лёд', ofp: 'ОФП', sfp: 'СФП', online: 'Online', contacts: 'Контакты', 'video-title': 'Видео прыжков', 'video-4s': '4S (четверной сальхов)', 'video-3lz': '3Lz (тройной лутц)', 'career-title': 'Результаты карьеры', 'footer-copy': '© 2026 Тренер по фигурному катанию' },
+    en: { trainer: 'Coach', skating: 'Ice', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'Contacts', 'video-title': 'Jump Videos', 'video-4s': '4S (quadruple Salchow)', 'video-3lz': '3Lz (triple Lutz)', 'career-title': 'Career Results', 'footer-copy': '© 2026 Figure Skating Coach' },
+    zh: { trainer: '教练', skating: '冰', ofp: '体能', sfp: '专项', online: '在线', contacts: '联系', 'video-title': '跳跃视频', 'video-4s': '4S (后内结环四周跳)', 'video-3lz': '3Lz (勾手三周跳)', 'career-title': '职业生涯成绩', 'footer-copy': '© 2026 花样滑冰教练' },
+    th: { trainer: 'โค้ช', skating: 'น้ำแข็ง', ofp: 'GPP', sfp: 'SPP', online: 'Online', contacts: 'ติดต่อ', 'video-title': 'วิดีโอการกระโดด', 'video-4s': '4S (Salchow สี่รอบ)', 'video-3lz': '3Lz (Lutz สามรอบ)', 'career-title': 'ผลงานอาชีพ', 'footer-copy': '© 2026 โค้ชสเก็ตลีลา' }
   };
 
   const content = {
