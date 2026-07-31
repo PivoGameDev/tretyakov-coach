@@ -618,6 +618,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function sendToBot(data) {
     var msg = 'Заявка с сайта\nИмя: ' + (data.name || '—') + '\nТел: ' + (data.phone || '—') + '\nEmail: ' + (data.email || '—') + (data.message ? '\nСообщение: ' + data.message : '');
     new Image().src = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(msg);
+    var mailto = 'mailto:89ivantretyakov@gmail.com?subject=Заявка с сайта&body=' + encodeURIComponent(msg);
+    window.location.href = mailto;
   }
 
   // ========== CONTACTS FORM ==========
