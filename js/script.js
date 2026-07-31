@@ -615,14 +615,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
-  var tgIframe = document.createElement('iframe');
-  tgIframe.name = 'tgSend';
-  tgIframe.style.display = 'none';
-  document.body.appendChild(tgIframe);
+  const TG_URL = 'https://script.google.com/macros/s/AKfycbwmIIXjQrv3MeV4WzQhcdubMhLP4kmNd1xtj-rslDqPJsc5ZGCPRcpCg6i5Ia4_0D12/exec';
 
-  function tgSend(text) {
-    var url = 'https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage?chat_id=' + encodeURIComponent(TG_CHAT_ID) + '&text=' + encodeURIComponent(text);
-    tgIframe.src = url;
+  function sendToBot(data) {
+    var fd = new URLSearchParams();
+    fd.append('name', data.name || '—');
+    fd.append('phone', data.phone || '—');
+    fd.append('email', data.email || '—');
+    fd.append('message', data.message || '');
+    fetch(TG_URL, { method: 'POST', body: fd }).catch(function(){});
   }
 
   // ========== CONTACTS FORM ==========
@@ -632,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var check = this.querySelector('input[type=checkbox]');
     if (!msg) { alert('Напишите сообщение.'); return; }
     if (!check.checked) { alert('Подтвердите согласие на обработку данных.'); return; }
-    tgSend('Новая заявка с сайта\n\nИмя: -\nТелефон: -\nEmail: -\nСообщение: ' + msg);
+    sendToBot({ message: msg });
     window.location.href = 'thanks.html';
   });
 
@@ -658,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      tgSend('Новая заявка с сайта\n\nИмя: ' + name + '\nТелефон: ' + phone + '\nEmail: ' + email);
+      sendToBot({ name: name, phone: phone, email: email });
       closeModal();
       window.location.href = 'thanks.html';
     });
