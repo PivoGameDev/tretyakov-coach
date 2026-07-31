@@ -114,19 +114,13 @@ ul {
 
 @media (max-width: 992px) {
   .curve-skating-rev {
-    margin-top: 0;
-    padding-top: 60px;
-    clip-path: url(#clip-wave-bot-only);
+    clip-path: none;
   }
   .curve-skating {
-    margin-top: 0;
-    padding-top: 60px;
-    clip-path: url(#clip-wave-bot-only);
+    clip-path: none;
   }
   .curve-ofp-top {
-    margin-top: 0;
-    padding-top: 60px;
-    clip-path: url(#clip-wave-mob-ct);
+    clip-path: none;
   }
   .curve-contacts {
     clip-path: url(#clip-wave-mob-ct);
