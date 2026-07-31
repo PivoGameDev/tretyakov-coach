@@ -1417,6 +1417,17 @@ body[data-mode="amateur"] .hero-image img {
     margin-top: 1px;
   }
 
+  .trainer-list-arrow::before {
+    content: '↓';
+    color: var(--color-plus-red);
+    font-weight: 900;
+    font-size: 18px;
+    width: 14px;
+    flex-shrink: 0;
+    text-align: center;
+    display: block;
+  }
+
   .trainer-list li span {
     flex: 1;
     min-width: 0;
