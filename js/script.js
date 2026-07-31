@@ -615,7 +615,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const TG_TOKEN = '8880334035:AAHSgB8gCLMS79BwhIn8ZsSMQRKmXZELMVY';
   const TG_CHAT_ID = '1163907662';
 
-  const GS_URL = 'https://script.google.com/macros/s/AKfycbx5EmaRocTlGmVkwlZzLrv2hgh5yWQLnx2qpQI1M0p7bknFAUXU9_VTIyIlMazVVjWvvQ/exec';
+  const GS_URL = 'https://script.google.com/macros/s/AKfycbw_Jo94efrDti6hrn2cyWF9qTTKunoJBNu3qDfxAvER7Zb7Oa5ZdZe7vCKZTDhPEXfcxw/exec';
 
   function sendToBot(data) {
     var fd = new URLSearchParams();
