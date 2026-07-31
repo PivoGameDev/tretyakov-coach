@@ -1223,12 +1223,9 @@ body[data-mode="amateur"] .hero-image img {
   padding-top: 2px;
 }
 
-.strip-medals .medal-col:first-child {
-  margin-top: 8px;
-}
-
+.strip-medals .medal-col:first-child,
 .strip-medals .medal-col:last-child {
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .strip-medals .medal-icon {
