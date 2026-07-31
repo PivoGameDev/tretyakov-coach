@@ -611,19 +611,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ========== API CONFIG ==========
+  const API_URL = 'https://tretyakov-coach-backend.onrender.com/api';
+
+  function submitForm(data) {
+    fetch(API_URL + '/send-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(r => r.json()).then(res => {
+      const thanks = { ru: 'thanks.html', en: 'thanks-en.html', zh: 'thanks-zh.html', th: 'thanks-th.html' };
+      window.location.href = thanks[currentLang] || 'thanks.html';
+    }).catch(() => {
+      window.location.href = 'thanks.html';
+    });
+  }
+
   // ========== CONTACTS FORM ==========
   const contactsForm = document.getElementById('contactsForm');
 
   if (contactsForm) {
     contactsForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      const textarea = this.querySelector('textarea');
-      if (textarea && textarea.value.trim()) {
-        alert('Сообщение отправлено! Спасибо, я свяжусь с вами в ближайшее время.');
-        textarea.value = '';
-      } else {
-        alert('Пожалуйста, напишите сообщение.');
-      }
+      const message = this.querySelector('textarea').value.trim();
+      if (!message) { alert('Напишите сообщение.'); return; }
+      submitForm({ name: '—', phone: '—', email: '—', message });
     });
   }
 
@@ -640,16 +652,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const consent = this.querySelector('#modalConsent').checked;
 
       if (!name || !phone || !email) {
-        alert('Пожалуйста, заполните все поля.');
+        alert('Заполните все поля.');
         return;
       }
 
       if (!consent) {
-        alert('Пожалуйста, дайте согласие на обработку персональных данных.');
+        alert('Дайте согласие на обработку персональных данных.');
         return;
       }
 
-      alert('Заявка отправлена! Я свяжусь с вами в ближайшее время.');
+      submitForm({ name, phone, email, message: '' });
       this.reset();
       closeModal();
     });
